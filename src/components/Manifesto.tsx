@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import ThornVine from "./ThornVine";
 
 const pillars = [
   {
@@ -34,13 +33,6 @@ export default function Manifesto() {
       id="manifesto"
       className="relative overflow-hidden px-6 py-24"
     >
-      <div className="pointer-events-none absolute -left-10 top-0 opacity-30 blur-sm">
-        <ThornVine id="manifesto-l" width={360} height={100} thorns={9} className="w-[260px]" />
-      </div>
-      <div className="pointer-events-none absolute -right-10 bottom-0 -scale-x-100 opacity-30 blur-sm">
-        <ThornVine id="manifesto-r" width={360} height={100} thorns={9} className="w-[260px]" />
-      </div>
-
       <motion.div
         initial="hidden"
         whileInView="show"

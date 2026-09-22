@@ -17,7 +17,7 @@ export default function Header() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="glass-header fixed top-0 inset-x-0 z-30"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
         <a href="#top" className="block">
           <Image
             src="/nikonic-logo.jpg"
@@ -25,7 +25,7 @@ export default function Header() {
             width={1079}
             height={674}
             priority
-            className="h-9 w-auto object-contain mix-blend-screen"
+            className="h-16 w-auto object-contain mix-blend-screen"
           />
         </a>
         <nav className="hidden gap-8 md:flex">

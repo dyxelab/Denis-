@@ -1,8 +1,6 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import Image from "next/image";
-import ThornVine from "./ThornVine";
 
 const container: Variants = {
   hidden: {},
@@ -22,60 +20,15 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-6 pt-20 text-center"
     >
-      {/* corner atmosphere */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-        className="pointer-events-none absolute -left-16 -top-10 opacity-70 blur-[1px] md:opacity-100"
-      >
-        <ThornVine id="hero-tl" width={420} height={160} thorns={12} className="w-[280px] md:w-[420px]" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-        className="pointer-events-none absolute -right-16 -top-10 -scale-x-100 opacity-70 blur-[1px] md:opacity-100"
-      >
-        <ThornVine id="hero-tr" width={420} height={160} thorns={12} className="w-[280px] md:w-[420px]" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 1.4, delay: 0.4 }}
-        className="pointer-events-none absolute -bottom-6 -left-20 rotate-6 blur-sm"
-      >
-        <ThornVine id="hero-bl" width={500} height={140} thorns={10} className="w-[320px] md:w-[500px]" />
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 1.4, delay: 0.4 }}
-        className="pointer-events-none absolute -bottom-6 -right-20 -scale-x-100 rotate-6 blur-sm"
-      >
-        <ThornVine id="hero-br" width={500} height={140} thorns={10} className="w-[320px] md:w-[500px]" />
-      </motion.div>
-
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="flex flex-col items-center"
       >
-        <motion.div variants={item} className="w-[280px] sm:w-[380px] md:w-[520px]">
-          <Image
-            src="/nikonic-logo.jpg"
-            alt="Nikonic"
-            width={1079}
-            height={674}
-            priority
-            className="h-auto w-full object-contain mix-blend-screen"
-          />
-        </motion.div>
-
         <motion.p
           variants={item}
-          className="mt-6 max-w-xl text-balance font-[family-name:var(--font-display)] text-lg tracking-[0.15em] text-[var(--chrome-1)] sm:text-xl"
+          className="max-w-xl text-balance font-[family-name:var(--font-display)] text-lg tracking-[0.15em] text-[var(--chrome-1)] sm:text-xl"
         >
           COMPOSIZIONI UNICHE SU MARCHI REALI E ORIGINALI
         </motion.p>
