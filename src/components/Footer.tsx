@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const socials = [
   { label: "Instagram", href: "https://instagram.com" },
   { label: "TikTok", href: "https://tiktok.com" },
@@ -6,8 +10,14 @@ const socials = [
 export default function Footer() {
   return (
     <footer id="contatti" className="relative border-t border-[var(--line)] px-6 py-20">
-      <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-        <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] text-[var(--muted)]">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mx-auto flex max-w-4xl flex-col items-center text-center"
+      >
+        <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] neon-text">
           VUOI UN PEZZO UNICO?
         </span>
         <h2 className="mt-4 font-[family-name:var(--font-script)] text-5xl chrome-text sm:text-6xl">
@@ -22,7 +32,7 @@ export default function Footer() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:info@nikonic.it"
-            className="bg-[var(--chrome-1)] px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-black transition-transform hover:-translate-y-0.5"
+            className="btn-neon px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"
           >
             SCRIVICI
           </a>
@@ -32,7 +42,7 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="border border-[var(--chrome-4)] px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-[var(--chrome-1)] transition-colors hover:border-[var(--chrome-1)]"
+              className="btn-neon-outline px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"
             >
               {social.label.toUpperCase()}
             </a>
@@ -45,7 +55,7 @@ export default function Footer() {
           </span>
           <span>&copy; {new Date().getFullYear()} Nikonic. Tutti i pezzi sono fatti a mano, in edizione limitata.</span>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

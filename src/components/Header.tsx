@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const links = [
   { label: "Composizioni", href: "#composizioni" },
   { label: "Manifesto", href: "#manifesto" },
@@ -6,7 +10,12 @@ const links = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 inset-x-0 z-30 border-b border-[var(--line)] bg-[var(--background)]/80 backdrop-blur-md">
+    <motion.header
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="glass-header fixed top-0 inset-x-0 z-30"
+    >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <a
           href="#top"
@@ -19,7 +28,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-[var(--muted)] transition-colors hover:text-white"
+              className="font-[family-name:var(--font-display)] text-sm tracking-[0.2em] text-[var(--muted)] transition-colors hover:text-[var(--neon)]"
             >
               {link.label.toUpperCase()}
             </a>
@@ -27,11 +36,11 @@ export default function Header() {
         </nav>
         <a
           href="#contatti"
-          className="border border-[var(--chrome-3)] px-4 py-1.5 font-[family-name:var(--font-display)] text-xs tracking-[0.2em] text-[var(--chrome-1)] transition-colors hover:bg-[var(--chrome-3)] hover:text-black"
+          className="btn-neon-outline px-4 py-1.5 font-[family-name:var(--font-display)] text-xs tracking-[0.2em]"
         >
           RICHIEDI UN PEZZO
         </a>
       </div>
-    </header>
+    </motion.header>
   );
 }

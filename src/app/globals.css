@@ -11,6 +11,9 @@
   --chrome-4: #3f3f46;
   --accent: #c9c9cf;
   --line: #2a2a2e;
+  --neon: #ccff33;
+  --neon-soft: #e8ffb0;
+  --neon-glow: rgba(204, 255, 51, 0.45);
 }
 
 @theme inline {
@@ -98,4 +101,56 @@ body::before {
 
 .flicker {
   animation: flicker 6s infinite;
+}
+
+/* neon secondary accent, used on CTAs and keyword highlights */
+.neon-text {
+  color: var(--neon);
+  text-shadow: 0 0 14px var(--neon-glow), 0 0 2px rgba(204, 255, 51, 0.6);
+}
+
+/* frosted glass / ice effect for header and product panels */
+.glass {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 0 40px rgba(255, 255, 255, 0.03),
+    0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.glass-header {
+  background: rgba(11, 11, 12, 0.45);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-neon {
+  position: relative;
+  color: #04140a;
+  background: linear-gradient(180deg, var(--neon-soft), var(--neon));
+  box-shadow: 0 0 0 1px rgba(204, 255, 51, 0.5), 0 8px 24px -6px var(--neon-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-neon:hover {
+  box-shadow: 0 0 0 1px rgba(204, 255, 51, 0.8), 0 10px 30px -4px var(--neon-glow);
+}
+
+.btn-neon-outline {
+  color: var(--neon);
+  border: 1px solid rgba(204, 255, 51, 0.5);
+  background: rgba(204, 255, 51, 0.05);
+  transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+.btn-neon-outline:hover {
+  background: rgba(204, 255, 51, 0.12);
+  box-shadow: 0 0 20px -4px var(--neon-glow);
 }

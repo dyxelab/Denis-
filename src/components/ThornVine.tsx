@@ -10,6 +10,11 @@ type ThornVineProps = {
  * Procedurally generated barbed-wire strand. Deterministic (sine-based, no RNG)
  * so server/client markup always matches.
  */
+// Round to a fixed precision so server- and client-rendered markup match
+// exactly — raw floats from Math.sin/cos can differ in their last digit
+// between Node and the browser and trip a hydration mismatch.
+const r = (n: number) => Math.round(n * 1000) / 1000;
+
 export default function ThornVine({
   className,
   width = 600,
@@ -54,12 +59,12 @@ export default function ThornVine({
       const barbSpread = spikeLen * 0.22;
       barbs.push(
         <g key={b}>
-          <line x1={0} y1={0} x2={x2} y2={y2} strokeWidth={1.8} strokeLinecap="round" />
+          <line x1={0} y1={0} x2={r(x2)} y2={r(y2)} strokeWidth={1.8} strokeLinecap="round" />
           <line
-            x1={nx + px * barbSpread}
-            y1={ny + py * barbSpread}
-            x2={nx - px * barbSpread}
-            y2={ny - py * barbSpread}
+            x1={r(nx + px * barbSpread)}
+            y1={r(ny + py * barbSpread)}
+            x2={r(nx - px * barbSpread)}
+            y2={r(ny - py * barbSpread)}
             strokeWidth={1.4}
             strokeLinecap="round"
           />
