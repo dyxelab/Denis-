@@ -33,7 +33,7 @@ export default function ProductCard({ name, base, price, Icon }: ProductCardProp
           BUY NOW
         </a>
       </div>
-      <div className="relative flex flex-1 flex-col gap-1 border-t border-white/10 px-5 py-4">
+      <div className="relative flex flex-1 flex-col gap-1 border-t border-white/10 px-5 py-3">
         <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.25em] neon-text">
           HOME-MADE
         </span>

@@ -31,7 +31,7 @@ export default function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="relative overflow-hidden px-6 py-24"
+      className="relative overflow-hidden px-6 py-14"
     >
       <motion.div
         initial="hidden"
@@ -56,7 +56,7 @@ export default function Manifesto() {
         </motion.h2>
         <motion.p
           variants={item}
-          className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-[var(--muted)]"
+          className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[var(--muted)]"
         >
           Nikonic nasce dalla strada e dal punk. Prendiamo capi e accessori
           reali, li smontiamo e li rimontiamo secondo la nostra estetica:
@@ -64,13 +64,13 @@ export default function Manifesto() {
           irripetibili, pensate per chi non vuole essere uguale a tutti.
         </motion.p>
 
-        <div className="mt-16 flex flex-col gap-10 text-left sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
+        <div className="mt-10 flex flex-col gap-6 text-left sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
               variants={item}
               className={`max-w-[15rem] ${
-                i === 1 ? "sm:mt-12" : i === 2 ? "sm:mt-3" : "sm:mt-0"
+                i === 1 ? "sm:mt-8" : i === 2 ? "sm:mt-2" : "sm:mt-0"
               } ${i === 2 ? "sm:ml-auto sm:text-right" : ""}`}
             >
               <span

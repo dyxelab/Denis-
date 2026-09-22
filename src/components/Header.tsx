@@ -25,7 +25,7 @@ export default function Header() {
             width={1079}
             height={674}
             priority
-            className="h-16 w-auto object-contain mix-blend-screen"
+            className="h-14 w-auto object-contain mix-blend-screen"
           />
         </a>
         <nav className="hidden gap-8 md:flex">

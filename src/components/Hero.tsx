@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[92vh] flex-col items-center justify-center overflow-hidden px-6 pt-20 text-center"
+      className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-10 text-center"
     >
       <motion.div
         variants={container}
@@ -37,7 +37,7 @@ export default function Hero() {
           Ogni pezzo nasce dalla strada, vive di punk attitude.
         </motion.p>
 
-        <motion.div variants={item} className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <motion.div variants={item} className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#composizioni"
             className="btn-neon px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"

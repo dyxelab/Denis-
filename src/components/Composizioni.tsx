@@ -55,14 +55,14 @@ const scatter = [
 
 export default function Composizioni() {
   return (
-    <section id="composizioni" className="relative px-6 py-24">
+    <section id="composizioni" className="relative px-6 py-12">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-14 flex flex-col items-start gap-3"
+          className="mb-8 flex flex-col items-start gap-2"
         >
           <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] neon-text">
             LA COLLEZIONE
@@ -77,7 +77,7 @@ export default function Composizioni() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-5 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <div
               key={item.name}

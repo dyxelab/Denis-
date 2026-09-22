@@ -10,7 +10,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="contatti" className="relative border-t border-[var(--line)] px-6 py-20">
+    <footer id="contatti" className="relative border-t border-[var(--line)] px-6 py-12">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function Footer() {
           mano, una alla volta.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
           <a
             href="mailto:info@nikonic.it"
             className="btn-neon px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"
@@ -50,7 +50,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 flex w-full flex-col items-center gap-2 border-t border-[var(--line)] pt-8 text-xs text-[var(--muted)]">
+        <div className="mt-10 flex w-full flex-col items-center gap-2 border-t border-[var(--line)] pt-6 text-xs text-[var(--muted)]">
           <Image
             src="/nikonic-logo.jpg"
             alt="Nikonic"

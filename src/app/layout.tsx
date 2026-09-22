@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Inter, Mrs_Saint_Delafield } from "next/font/google";
 import "./globals.css";
 import SparkleBackground from "@/components/SparkleBackground";
+import SplashScreen from "@/components/SplashScreen";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-display",
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)] font-[family-name:var(--font-body)]">
         <SparkleBackground />
+        <SplashScreen />
         {children}
       </body>
     </html>
