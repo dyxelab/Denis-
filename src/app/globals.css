@@ -136,19 +136,32 @@ body::before {
 
 .btn-neon {
   position: relative;
-  color: #03130a;
-  background: linear-gradient(180deg, var(--neon-soft), var(--neon));
-  box-shadow: 0 0 0 1px rgba(var(--neon-rgb), 0.55), 0 8px 24px -6px var(--neon-glow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: var(--neon-soft);
+  background: linear-gradient(160deg, rgba(var(--neon-rgb), 0.32), rgba(var(--neon-rgb), 0.12));
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(var(--neon-rgb), 0.6);
+  border-radius: 999px;
+  text-shadow: 0 0 10px var(--neon-glow);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 8px 24px -8px var(--neon-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 .btn-neon:hover {
-  box-shadow: 0 0 0 1px rgba(var(--neon-rgb), 0.85), 0 10px 30px -4px var(--neon-glow);
+  background: linear-gradient(160deg, rgba(var(--neon-rgb), 0.45), rgba(var(--neon-rgb), 0.18));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 10px 30px -6px var(--neon-glow);
 }
 
 .btn-neon-outline {
   color: var(--neon);
-  border: 1px solid rgba(var(--neon-rgb), 0.5);
-  background: rgba(var(--neon-rgb), 0.06);
+  border: 1px solid rgba(var(--neon-rgb), 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-radius: 999px;
   transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 .btn-neon-outline:hover {
