@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 import ThornVine from "./ThornVine";
 
 const container: Variants = {
@@ -61,19 +62,16 @@ export default function Hero() {
         animate="show"
         className="flex flex-col items-center"
       >
-        <motion.p
-          variants={item}
-          className="font-[family-name:var(--font-display)] text-xs tracking-[0.5em] neon-text"
-        >
-          STREETWEAR &middot; CUSTOM &middot; HOME-MADE
-        </motion.p>
-
-        <motion.h1
-          variants={item}
-          className="mt-4 font-[family-name:var(--font-script)] text-[4.5rem] leading-none chrome-text sm:text-[6.5rem] md:text-[8.5rem]"
-        >
-          Nikonic
-        </motion.h1>
+        <motion.div variants={item} className="w-[280px] sm:w-[380px] md:w-[520px]">
+          <Image
+            src="/nikonic-logo.jpg"
+            alt="Nikonic"
+            width={1079}
+            height={674}
+            priority
+            className="h-auto w-full object-contain mix-blend-screen"
+          />
+        </motion.div>
 
         <motion.p
           variants={item}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const socials = [
   { label: "Instagram", href: "https://instagram.com" },
@@ -50,9 +51,13 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex w-full flex-col items-center gap-2 border-t border-[var(--line)] pt-8 text-xs text-[var(--muted)]">
-          <span className="font-[family-name:var(--font-script)] text-xl chrome-text">
-            Nikonic
-          </span>
+          <Image
+            src="/nikonic-logo.jpg"
+            alt="Nikonic"
+            width={1079}
+            height={674}
+            className="h-8 w-auto object-contain mix-blend-screen"
+          />
           <span>&copy; {new Date().getFullYear()} Nikonic. Tutti i pezzi sono fatti a mano, in edizione limitata.</span>
         </div>
       </motion.div>

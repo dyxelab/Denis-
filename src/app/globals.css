@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0b0c;
-  --background-alt: #131315;
+  --background: #000000;
+  --background-alt: #0a0a0a;
   --foreground: #e8e8ea;
   --muted: #9a9aa0;
   --chrome-1: #fafafa;
@@ -169,94 +169,65 @@ body::before {
   box-shadow: 0 0 20px -4px var(--neon-glow);
 }
 
-/* organic animated background, fixed behind the whole page */
-.organic-bg {
+/* sparkle background: pure black with drifting chrome/silver glints */
+.sparkle-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: var(--background);
+  background: #000000;
 }
 
-.organic-bg .blob {
+.sparkle-dot {
   position: absolute;
-  border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
-  filter: blur(80px);
-  will-change: transform, border-radius;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 75%);
+  animation-name: sparkleTwinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: opacity, transform;
 }
 
-.blob-1 {
-  width: 55vw;
-  height: 55vw;
-  top: -18%;
-  left: -14%;
-  background: radial-gradient(circle at 35% 35%, rgba(var(--neon-rgb), 0.55), rgba(var(--neon-rgb), 0) 70%);
-  opacity: 0.5;
-  mix-blend-mode: screen;
-  animation: blobMove1 24s ease-in-out infinite alternate, blobMorph1 16s ease-in-out infinite;
+.sparkle-glow {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(30px);
+  animation-name: sparkleDrift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  will-change: transform;
 }
 
-.blob-2 {
-  width: 48vw;
-  height: 48vw;
-  bottom: -20%;
-  right: -12%;
-  background: radial-gradient(circle at 60% 40%, rgba(120, 120, 132, 0.5), rgba(120, 120, 132, 0) 70%);
-  opacity: 0.45;
-  mix-blend-mode: screen;
-  animation: blobMove2 28s ease-in-out infinite alternate, blobMorph2 19s ease-in-out infinite;
+.sparkle-star {
+  position: absolute;
+  animation-name: sparklePulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+  will-change: opacity, transform;
 }
 
-.blob-3 {
-  width: 38vw;
-  height: 38vw;
-  top: 28%;
-  right: 10%;
-  background: radial-gradient(circle at 50% 50%, rgba(var(--neon-rgb), 0.4), rgba(var(--neon-rgb), 0) 70%);
-  opacity: 0.35;
-  mix-blend-mode: screen;
-  animation: blobMove3 32s ease-in-out infinite alternate, blobMorph1 21s ease-in-out infinite reverse;
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
 }
 
-.blob-4 {
-  width: 34vw;
-  height: 34vw;
-  bottom: 8%;
-  left: 8%;
-  background: radial-gradient(circle at 45% 55%, rgba(63, 63, 70, 0.55), rgba(63, 63, 70, 0) 70%);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-  animation: blobMove4 26s ease-in-out infinite alternate, blobMorph2 15s ease-in-out infinite reverse;
-}
-
-@keyframes blobMove1 {
+@keyframes sparkleDrift {
   0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(9vw, 7vh) scale(1.18); }
-}
-@keyframes blobMove2 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-8vw, -9vh) scale(1.1); }
-}
-@keyframes blobMove3 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-7vw, 10vh) scale(0.88); }
-}
-@keyframes blobMove4 {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(6vw, -8vh) scale(1.12); }
+  100% { transform: translate(4vw, 5vh) scale(1.25); }
 }
 
-@keyframes blobMorph1 {
-  0%, 100% { border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%; }
-  50% { border-radius: 65% 35% 40% 60% / 55% 65% 35% 45%; }
-}
-@keyframes blobMorph2 {
-  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-  50% { border-radius: 30% 70% 60% 40% / 40% 60% 30% 70%; }
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.7) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.05) rotate(8deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .organic-bg .blob {
+  .sparkle-dot,
+  .sparkle-glow,
+  .sparkle-star {
     animation: none !important;
   }
 }

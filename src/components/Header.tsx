@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const links = [
   { label: "Composizioni", href: "#composizioni" },
@@ -17,11 +18,15 @@ export default function Header() {
       className="glass-header fixed top-0 inset-x-0 z-30"
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
-        <a
-          href="#top"
-          className="font-[family-name:var(--font-script)] text-2xl chrome-text tracking-wide"
-        >
-          Nikonic
+        <a href="#top" className="block">
+          <Image
+            src="/nikonic-logo.jpg"
+            alt="Nikonic"
+            width={1079}
+            height={674}
+            priority
+            className="h-9 w-auto object-contain mix-blend-screen"
+          />
         </a>
         <nav className="hidden gap-8 md:flex">
           {links.map((link) => (

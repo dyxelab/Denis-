@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Inter, Mrs_Saint_Delafield } from "next/font/google";
 import "./globals.css";
-import OrganicBackground from "@/components/OrganicBackground";
+import SparkleBackground from "@/components/SparkleBackground";
 
 const bebasNeue = Bebas_Neue({
   variable: "--font-display",
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${bebasNeue.variable} ${mrsSaintDelafield.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[color:var(--background)] text-[color:var(--foreground)] font-[family-name:var(--font-body)]">
-        <OrganicBackground />
+        <SparkleBackground />
         {children}
       </body>
     </html>
