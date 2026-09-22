@@ -32,7 +32,7 @@ export default function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="relative overflow-hidden border-t border-[var(--line)] bg-[var(--background-alt)] px-6 py-24"
+      className="relative overflow-hidden border-t border-[var(--line)] bg-[var(--background-alt)]/60 px-6 py-24 backdrop-blur-sm"
     >
       <div className="pointer-events-none absolute -left-10 top-0 opacity-30 blur-sm">
         <ThornVine id="manifesto-l" width={360} height={100} thorns={9} className="w-[260px]" />
