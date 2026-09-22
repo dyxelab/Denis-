@@ -32,7 +32,7 @@ export default function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="relative overflow-hidden border-t border-[var(--line)] bg-[var(--background-alt)]/60 px-6 py-24 backdrop-blur-sm"
+      className="relative overflow-hidden px-6 py-24"
     >
       <div className="pointer-events-none absolute -left-10 top-0 opacity-30 blur-sm">
         <ThornVine id="manifesto-l" width={360} height={100} thorns={9} className="w-[260px]" />
@@ -72,13 +72,19 @@ export default function Manifesto() {
           irripetibili, pensate per chi non vuole essere uguale a tutti.
         </motion.p>
 
-        <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-3">
-          {pillars.map((pillar) => (
+        <div className="mt-16 flex flex-col gap-10 text-left sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
+          {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
               variants={item}
-              className="glass rounded-sm border-t-2 border-t-[var(--neon)]/60 px-5 pb-6 pt-5"
+              className={`max-w-[15rem] ${
+                i === 1 ? "sm:mt-12" : i === 2 ? "sm:mt-3" : "sm:mt-0"
+              } ${i === 2 ? "sm:ml-auto sm:text-right" : ""}`}
             >
+              <span
+                aria-hidden="true"
+                className={`mb-3 block h-px w-10 bg-[var(--neon)]/60 ${i === 2 ? "sm:ml-auto" : ""}`}
+              />
               <h3 className="font-[family-name:var(--font-display)] text-lg tracking-[0.2em] neon-text">
                 {pillar.title}
               </h3>

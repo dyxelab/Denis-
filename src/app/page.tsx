@@ -1,3 +1,4 @@
+import BrandMarquee from "@/components/BrandMarquee";
 import Composizioni from "@/components/Composizioni";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -10,6 +11,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <BrandMarquee />
         <Composizioni />
         <Manifesto />
       </main>

@@ -43,9 +43,19 @@ const items = [
   },
 ];
 
+// scatter offsets so the grid reads as arranged by hand, not a rigid template
+const scatter = [
+  "sm:rotate-[-1deg]",
+  "sm:translate-y-4 sm:rotate-[0.75deg]",
+  "sm:-translate-y-2 sm:rotate-[-0.5deg]",
+  "sm:translate-y-2 sm:rotate-[1deg]",
+  "sm:-translate-y-3 sm:rotate-[-0.75deg]",
+  "sm:translate-y-1 sm:rotate-[0.5deg]",
+];
+
 export default function Composizioni() {
   return (
-    <section id="composizioni" className="relative border-t border-[var(--line)] px-6 py-24">
+    <section id="composizioni" className="relative px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -67,9 +77,14 @@ export default function Composizioni() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => (
-            <ProductCard key={item.name} {...item} />
+        <div className="grid grid-cols-1 gap-x-6 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((item, i) => (
+            <div
+              key={item.name}
+              className={`transition-transform duration-300 hover:!translate-y-0 hover:!rotate-0 ${scatter[i % scatter.length]}`}
+            >
+              <ProductCard {...item} />
+            </div>
           ))}
         </div>
       </div>
