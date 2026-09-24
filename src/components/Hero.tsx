@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import HeroObject3D from "./HeroObject3D";
 
 const container: Variants = {
   hidden: {},
@@ -30,7 +31,8 @@ export default function Hero() {
           variants={item}
           className="max-w-xl text-balance font-[family-name:var(--font-display)] text-lg tracking-[0.15em] text-[var(--chrome-1)] sm:text-xl lg:max-w-2xl lg:text-3xl"
         >
-          COMPOSIZIONI UNICHE SU MARCHI REALI E ORIGINALI
+          COMPOSIZIONI <span className="neon-text">UNICHE</span> SU MARCHI REALI E{" "}
+          <span className="neon-text">ORIGINALI</span>
         </motion.p>
         <motion.p
           variants={item}
@@ -54,13 +56,11 @@ export default function Hero() {
             IL MANIFESTO
           </a>
         </motion.div>
-
-        <motion.span
-          variants={item}
-          aria-hidden="true"
-          className="mt-14 hidden h-px w-24 bg-gradient-to-r from-transparent via-[var(--neon)]/50 to-transparent lg:block"
-        />
       </motion.div>
+
+      <div className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 sm:right-2 sm:block md:right-6 lg:right-10">
+        <HeroObject3D />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: -8 }}
