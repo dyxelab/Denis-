@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import HeroObject3D from "./HeroObject3D";
 
 const container: Variants = {
   hidden: {},
@@ -57,10 +56,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </motion.div>
-
-      <div className="pointer-events-none absolute right-0 top-1/2 hidden -translate-y-1/2 sm:right-2 sm:block md:right-6 lg:right-10">
-        <HeroObject3D />
-      </div>
 
       <motion.div
         initial={{ opacity: 0, y: -8 }}
