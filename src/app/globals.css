@@ -176,6 +176,8 @@ body::before {
   z-index: -1;
   overflow: hidden;
   background: #000000;
+  filter: blur(2px);
+  transform: scale(1.02);
 }
 
 .sparkle-dot {
@@ -246,44 +248,42 @@ body::before {
   }
 }
 
-/* hanging chain, fixed in the background across the whole site, as if tugged now and then */
+/* hanging chain, fixed in the background, drifting right to left across the whole site */
 .chain-wrap {
   position: fixed;
-  top: -6px;
-  right: 6%;
+  top: 42%;
+  left: 0;
+  width: 100vw;
+  overflow: hidden;
   z-index: 0;
   pointer-events: none;
   opacity: 0.4;
-  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.6));
 }
 
-.chain-pull {
-  transform-origin: 50% 0%;
-  animation: chainPull 12s ease-in-out infinite;
+.chain-track {
+  display: block;
+  animation: chainScroll 28s linear infinite;
+  will-change: transform;
 }
 
-@keyframes chainPull {
-  0%, 5% { transform: rotate(0deg) translateY(0); }
-  9% { transform: rotate(7deg) translateY(16px); }
-  14% { transform: rotate(-5deg) translateY(5px); }
-  19% { transform: rotate(3.5deg) translateY(2px); }
-  24% { transform: rotate(-2deg); }
-  29% { transform: rotate(1deg); }
-  34%, 100% { transform: rotate(0deg) translateY(0); }
+@keyframes chainScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .chain-pull {
+  .chain-track {
     animation: none;
   }
 }
 
 @media (max-width: 639px) {
   .chain-wrap {
-    right: 3%;
+    top: 30%;
     opacity: 0.3;
-    transform: scale(0.75);
-    transform-origin: 100% 0%;
+    transform: scale(0.7);
+    transform-origin: 0% 0%;
   }
 }
 
