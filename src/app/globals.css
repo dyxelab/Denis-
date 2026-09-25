@@ -246,6 +246,47 @@ body::before {
   }
 }
 
+/* hanging chain, fixed in the background across the whole site, as if tugged now and then */
+.chain-wrap {
+  position: fixed;
+  top: -6px;
+  right: 6%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.chain-pull {
+  transform-origin: 50% 0%;
+  animation: chainPull 12s ease-in-out infinite;
+}
+
+@keyframes chainPull {
+  0%, 5% { transform: rotate(0deg) translateY(0); }
+  9% { transform: rotate(7deg) translateY(16px); }
+  14% { transform: rotate(-5deg) translateY(5px); }
+  19% { transform: rotate(3.5deg) translateY(2px); }
+  24% { transform: rotate(-2deg); }
+  29% { transform: rotate(1deg); }
+  34%, 100% { transform: rotate(0deg) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chain-pull {
+    animation: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .chain-wrap {
+    right: 3%;
+    opacity: 0.3;
+    transform: scale(0.75);
+    transform-origin: 100% 0%;
+  }
+}
+
 /* small ornamental divider, a refined touch between sections on mobile */
 .ornament-diamond {
   width: 8px;

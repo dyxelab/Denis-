@@ -73,10 +73,6 @@ export default function Manifesto() {
                 i === 1 ? "sm:mt-8" : i === 2 ? "sm:mt-2" : "sm:mt-0"
               } ${i === 2 ? "sm:ml-auto sm:text-right" : ""}`}
             >
-              <span
-                aria-hidden="true"
-                className={`mx-auto mb-3 block h-px w-10 bg-[var(--neon)]/60 sm:mx-0 ${i === 2 ? "sm:ml-auto" : ""}`}
-              />
               <h3 className="font-[family-name:var(--font-display)] text-lg tracking-[0.2em] neon-text">
                 {pillar.title}
               </h3>

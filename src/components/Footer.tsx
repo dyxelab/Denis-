@@ -10,7 +10,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer id="contatti" className="relative border-t border-[var(--line)] px-6 py-12">
+    <footer id="contatti" className="relative px-6 py-12">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,10 +30,10 @@ export default function Footer() {
           mano, una alla volta.
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-6 flex flex-nowrap items-center justify-center gap-2 sm:gap-4">
           <a
             href="mailto:info@nikonic.it"
-            className="btn-neon px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"
+            className="btn-neon px-4 py-2 font-[family-name:var(--font-display)] text-[0.65rem] tracking-[0.12em] sm:px-8 sm:py-3 sm:text-sm sm:tracking-[0.2em]"
           >
             SCRIVICI
           </a>
@@ -43,14 +43,14 @@ export default function Footer() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="btn-neon-outline px-8 py-3 font-[family-name:var(--font-display)] text-sm tracking-[0.2em]"
+              className="btn-neon-outline px-4 py-2 font-[family-name:var(--font-display)] text-[0.65rem] tracking-[0.12em] sm:px-8 sm:py-3 sm:text-sm sm:tracking-[0.2em]"
             >
               {social.label.toUpperCase()}
             </a>
           ))}
         </div>
 
-        <div className="mt-10 flex w-full flex-col items-center gap-2 border-t border-[var(--line)] pt-6 text-xs text-[var(--muted)]">
+        <div className="mt-10 flex w-full flex-col items-center gap-2 pt-6 text-xs text-[var(--muted)]">
           <Image
             src="/nikonic-logo.jpg"
             alt="Nikonic"
