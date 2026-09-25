@@ -18,7 +18,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-10 text-center lg:min-h-[88vh] lg:pb-20"
+      className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-10 text-center sm:min-h-[60vh] lg:min-h-[88vh] lg:pb-20"
     >
       <motion.div
         variants={container}
@@ -28,7 +28,7 @@ export default function Hero() {
       >
         <motion.p
           variants={item}
-          className="max-w-xl text-balance font-[family-name:var(--font-display)] text-lg tracking-[0.15em] text-[var(--chrome-1)] sm:text-xl lg:max-w-2xl lg:text-3xl"
+          className="max-w-xl text-balance font-[family-name:var(--font-display)] text-2xl tracking-[0.15em] text-[var(--chrome-1)] sm:text-xl lg:max-w-2xl lg:text-3xl"
         >
           COMPOSIZIONI <span className="neon-text">UNICHE</span> SU MARCHI REALI E{" "}
           <span className="neon-text">ORIGINALI</span>

@@ -42,7 +42,7 @@ export default function Manifesto() {
       >
         <motion.span
           variants={item}
-          className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] neon-text"
+          className="font-[family-name:var(--font-display)] text-xs tracking-[0.45em] neon-text sm:tracking-[0.4em]"
         >
           IL MANIFESTO
         </motion.span>
@@ -64,18 +64,18 @@ export default function Manifesto() {
           irripetibili, pensate per chi non vuole essere uguale a tutti.
         </motion.p>
 
-        <div className="mt-10 flex flex-col gap-6 text-left sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
+        <div className="mt-10 flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:justify-between sm:gap-6 sm:text-left">
           {pillars.map((pillar, i) => (
             <motion.div
               key={pillar.title}
               variants={item}
-              className={`max-w-[15rem] ${
+              className={`mx-auto max-w-[15rem] sm:mx-0 ${
                 i === 1 ? "sm:mt-8" : i === 2 ? "sm:mt-2" : "sm:mt-0"
               } ${i === 2 ? "sm:ml-auto sm:text-right" : ""}`}
             >
               <span
                 aria-hidden="true"
-                className={`mb-3 block h-px w-10 bg-[var(--neon)]/60 ${i === 2 ? "sm:ml-auto" : ""}`}
+                className={`mx-auto mb-3 block h-px w-10 bg-[var(--neon)]/60 sm:mx-0 ${i === 2 ? "sm:ml-auto" : ""}`}
               />
               <h3 className="font-[family-name:var(--font-display)] text-lg tracking-[0.2em] neon-text">
                 {pillar.title}

@@ -14,6 +14,7 @@ export default function Home() {
         <BrandMarquee />
         <Composizioni />
         <Manifesto />
+        <span aria-hidden="true" className="ornament-diamond my-2 block sm:hidden" />
       </main>
       <Footer />
     </>

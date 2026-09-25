@@ -18,13 +18,13 @@ export default function Footer() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mx-auto flex max-w-4xl flex-col items-center text-center"
       >
-        <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] neon-text">
+        <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.45em] neon-text sm:tracking-[0.4em]">
           VUOI UN PEZZO UNICO?
         </span>
-        <h2 className="mt-4 font-[family-name:var(--font-script)] text-5xl chrome-text sm:text-6xl">
+        <h2 className="mt-4 hidden font-[family-name:var(--font-script)] text-5xl chrome-text sm:block sm:text-6xl">
           Parliamone
         </h2>
-        <p className="mt-4 max-w-md text-sm text-[var(--muted)]">
+        <p className="mt-4 max-w-md text-sm tracking-wide text-[var(--muted)] sm:tracking-normal">
           Scrivici su Instagram o via email per ordinare una composizione o
           proporre il tuo capo da rilavorare. Ogni richiesta viene seguita a
           mano, una alla volta.

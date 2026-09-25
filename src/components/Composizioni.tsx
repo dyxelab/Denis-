@@ -62,9 +62,9 @@ export default function Composizioni() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-8 flex flex-col items-start gap-2"
+          className="mb-8 flex flex-col items-center gap-2 text-center sm:items-start sm:text-left"
         >
-          <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.4em] neon-text">
+          <span className="font-[family-name:var(--font-display)] text-xs tracking-[0.45em] neon-text sm:tracking-[0.4em]">
             LA COLLEZIONE
           </span>
           <h2 className="font-[family-name:var(--font-display)] text-4xl tracking-wide text-white sm:text-5xl">

@@ -232,6 +232,31 @@ body::before {
   }
 }
 
+/* mobile only: lift the background a touch so the page reads brighter on small screens */
+@media (max-width: 639px) {
+  :root {
+    --background: #070707;
+    --background-alt: #0c0c0c;
+  }
+  .sparkle-glow {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+  .sparkle-dot {
+    filter: brightness(1.25);
+  }
+}
+
+/* small ornamental divider, a refined touch between sections on mobile */
+.ornament-diamond {
+  width: 8px;
+  height: 8px;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  background: linear-gradient(135deg, var(--neon-soft), var(--neon));
+  box-shadow: 0 0 12px var(--neon-glow);
+  opacity: 0.8;
+}
+
 /* brand marquee, scrolls right to left */
 .marquee-track {
   display: flex;
