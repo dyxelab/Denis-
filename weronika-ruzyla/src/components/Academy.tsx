@@ -50,7 +50,7 @@ export default function Academy({ dict }: { dict: Dictionary["academy"] }) {
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ rotate: 0, scale: 1.02 }}
-          className="relative mx-auto aspect-[4/5] w-full max-w-[15rem] overflow-hidden rounded-[2rem] rounded-t-[999px] md:max-w-sm"
+          className="relative mx-auto aspect-[4/5] w-full max-w-[15rem] overflow-hidden rounded-[2rem] rounded-tr-[5rem] md:max-w-sm"
         >
           <Image src={images.voucher.src} alt="" fill sizes="(min-width: 768px) 30vw, 90vw" className="object-cover" />
         </motion.div>

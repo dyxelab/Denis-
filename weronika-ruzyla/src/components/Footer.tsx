@@ -75,7 +75,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               viewport={{ once: true }}
               transition={{ type: "spring", delay: 0.2 + i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 backdrop-blur transition-colors hover:border-rose hover:bg-rose"
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 transition-colors hover:border-rose hover:bg-rose"
             >
               <Icon className="h-6 w-6" />
             </motion.a>

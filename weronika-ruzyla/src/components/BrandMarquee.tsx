@@ -1,5 +1,4 @@
 import { site } from "@/content/site";
-import { Sparkle } from "./Icons";
 
 /** Animated strip of partner brands; it keeps moving even with reduced motion because it is the brand's signature element. */
 export default function BrandMarquee({ label }: { label: string }) {
@@ -11,15 +10,13 @@ export default function BrandMarquee({ label }: { label: string }) {
         {[0, 1].map((copy) => (
           <div key={copy} className="flex shrink-0 items-center">
             {row.map((brand, i) => (
-              <span key={`${copy}-${i}`} className="flex items-center">
-                <span
-                  className={`whitespace-nowrap px-8 text-4xl text-ink sm:px-12 sm:text-6xl ${
-                    i % 2 ? "display italic" : "font-semibold tracking-[0.2em]"
-                  }`}
-                >
-                  {brand}
-                </span>
-                <Sparkle className="h-6 w-6 shrink-0 text-rose" />
+              <span
+                key={`${copy}-${i}`}
+                className={`whitespace-nowrap px-10 text-4xl text-ink sm:px-16 sm:text-6xl ${
+                  i % 2 ? "font-light tracking-[0.3em]" : "font-semibold tracking-[0.12em]"
+                }`}
+              >
+                {brand}
               </span>
             ))}
           </div>

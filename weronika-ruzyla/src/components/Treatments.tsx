@@ -58,17 +58,17 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
           </Reveal>
         </div>
 
-        {/* mirrored collage: the arch opens on the left, opposite the hero arch */}
+        {/* staggered collage, as in the Framer draft */}
         <div className="relative hidden h-[600px] md:block">
           <motion.div
             style={{ y: yA }}
-            className="absolute left-0 top-0 h-[80%] w-[72%] overflow-hidden rounded-[2rem] rounded-t-[999px]"
+            className="absolute left-0 top-0 h-[80%] w-[72%] overflow-hidden rounded-[2rem] rounded-tl-[5rem]"
           >
             <Image src={images.facial.src} alt={t.items[1].title} fill sizes="(min-width: 768px) 30vw, 72vw" className="object-cover" />
           </motion.div>
           <motion.div
             style={{ y: yB, rotate }}
-            className="absolute bottom-0 right-0 h-[55%] w-[46%] overflow-hidden rounded-[2rem] rounded-b-[999px] border-[6px] border-cream shadow-2xl shadow-espresso/25"
+            className="absolute bottom-0 right-0 h-[55%] w-[46%] overflow-hidden rounded-[2rem] rounded-br-[5rem] border-[6px] border-cream shadow-2xl shadow-espresso/25"
           >
             <Image src={images.hands.src} alt="" fill sizes="(min-width: 768px) 20vw, 46vw" className="object-cover" />
           </motion.div>

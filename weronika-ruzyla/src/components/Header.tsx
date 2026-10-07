@@ -21,9 +21,10 @@ export default function Header({ lang, dict }: Props) {
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
-    setScrolled(y > 40);
-    setHidden(y > 400 && y > prev + 4);
-    if (y < prev - 4) setHidden(false);
+    const nextScrolled = y > 40;
+    if (nextScrolled !== scrolled) setScrolled(nextScrolled);
+    if (y > 400 && y > prev + 4 && !hidden) setHidden(true);
+    else if (y < prev - 4 && hidden) setHidden(false);
   });
 
   useEffect(() => {
@@ -42,14 +43,14 @@ export default function Header({ lang, dict }: Props) {
         animate={{ y: hidden && !open ? -110 : 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed inset-x-0 top-0 z-40 transition-colors duration-500 ${
-          light ? "text-ivory md:text-espresso" : "bg-ivory/75 text-espresso shadow-[0_1px_0_rgba(43,36,32,0.08)] backdrop-blur-xl"
+          light ? "text-ivory md:text-espresso" : "bg-ivory/95 text-espresso shadow-[0_1px_0_rgba(43,36,32,0.08)]"
         }`}
       >
-        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-4 py-3 sm:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-4 py-1.5 sm:px-8 sm:py-2">
           <a href="#home" aria-label={site.name} className="justify-self-start transition-transform hover:scale-105">
-            <Monogram className="h-12 w-auto sm:h-14" />
+            <Monogram className="h-9 w-auto sm:h-11" />
           </a>
-          <a href="#home" className="display text-center text-[1.65rem] leading-[0.8] sm:text-[2rem]">
+          <a href="#home" className="display text-center text-[1.3rem] leading-[0.85] sm:text-[1.6rem]">
             Weronika
             <br />
             <span className="italic">Rużyła</span>
@@ -61,7 +62,7 @@ export default function Header({ lang, dict }: Props) {
               onClick={() => setOpen(true)}
               aria-label={dict.menu.open}
               aria-expanded={open}
-              className="group flex h-11 w-11 flex-col items-end justify-center gap-[7px]"
+              className="group flex h-10 w-10 flex-col items-end justify-center gap-[6px]"
             >
               <span className="h-px w-8 bg-current transition-all duration-300 group-hover:w-6" />
               <span className="h-px w-6 bg-current transition-all duration-300 group-hover:w-8" />

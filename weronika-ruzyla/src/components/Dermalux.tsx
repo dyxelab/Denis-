@@ -32,9 +32,10 @@ export default function Dermalux({ dict, equipment }: { dict: Dictionary["dermal
       {/* ambient glow following the active wavelength */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[90vmin] w-[90vmin] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]"
-        animate={{ backgroundColor: color, opacity: [0.22, 0.32, 0.22] }}
-        transition={{ backgroundColor: { duration: 1.2 }, opacity: { duration: 4, repeat: Infinity } }}
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[90vmin] w-[90vmin] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[90px]"
+        style={{ opacity: 0.25 }}
+        animate={{ backgroundColor: color }}
+        transition={{ duration: 1.2 }}
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
@@ -62,9 +63,8 @@ export default function Dermalux({ dict, equipment }: { dict: Dictionary["dermal
               animate={{
                 backgroundColor: color,
                 boxShadow: `0 0 80px 20px ${color}88, inset 0 0 60px rgba(255,255,255,0.35)`,
-                scale: [1, 1.04, 1],
               }}
-              transition={{ backgroundColor: { duration: 1 }, boxShadow: { duration: 1 }, scale: { duration: 3, repeat: Infinity } }}
+              transition={{ duration: 1 }}
             />
             {/* LED dots */}
             <div className="absolute inset-[24%] grid grid-cols-6 place-items-center p-[14%] opacity-25">

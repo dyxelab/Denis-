@@ -11,7 +11,8 @@ export default function FloatingBook({ dict }: { dict: Dictionary }) {
   const [show, setShow] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (y) => {
-    setShow(y > window.innerHeight * 0.8 && scrollYProgress.get() < 0.93);
+    const next = y > window.innerHeight * 0.8 && scrollYProgress.get() < 0.93;
+    if (next !== show) setShow(next);
   });
 
   return (
@@ -25,7 +26,7 @@ export default function FloatingBook({ dict }: { dict: Dictionary }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 26 }}
-          className="shine eyebrow fixed inset-x-5 bottom-5 z-30 rounded-full bg-espresso/90 py-4 text-center text-ivory shadow-2xl shadow-ink/30 backdrop-blur md:hidden"
+          className="shine eyebrow fixed inset-x-5 bottom-5 z-30 rounded-full bg-espresso py-4 text-center text-ivory shadow-2xl shadow-ink/30 md:hidden"
         >
           {dict.hero.cta}
         </motion.a>

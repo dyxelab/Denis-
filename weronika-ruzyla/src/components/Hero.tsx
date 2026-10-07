@@ -26,7 +26,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
         animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
         transition={{ duration: 1.6, delay: INTRO - 0.6, ease: [0.76, 0, 0.24, 1] }}
-        className="absolute inset-x-0 bottom-[24%] top-0 overflow-hidden md:inset-auto md:bottom-10 md:right-8 md:top-24 md:w-[42%] md:rounded-b-[2rem] md:rounded-t-[999px] lg:right-16 lg:w-[38%]"
+        className="absolute inset-x-0 bottom-[24%] top-0 overflow-hidden md:inset-auto md:bottom-10 md:right-8 md:top-24 md:w-[42%] md:rounded-[1.5rem] lg:right-16 lg:w-[38%]"
       >
         <motion.div style={{ y: imgY }} className="absolute inset-0 -top-[8%] h-[116%]">
           <motion.div
@@ -45,13 +45,6 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             />
           </motion.div>
         </motion.div>
-        {/* drifting light beam, echoing the sunlight in the photo */}
-        <motion.div
-          aria-hidden="true"
-          className="pointer-events-none absolute -inset-1/2 bg-[linear-gradient(115deg,transparent_40%,rgba(255,248,235,0.35)_50%,transparent_60%)]"
-          animate={{ x: ["-20%", "20%", "-20%"] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-ink/20 md:hidden" />
       </motion.div>
 
@@ -69,7 +62,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             <span className="h-px w-10 bg-current opacity-60" />
             {t.eyebrow}
           </motion.p>
-          <h1 className="display mt-6 text-[clamp(2.9rem,9vw,7.5rem)]">
+          <h1 className="display mt-6 text-[clamp(2.9rem,6vw,6.25rem)]">
             {[t.titleA, t.titleB].map((line, i) => (
               <span key={i} className="block overflow-hidden pb-[0.08em]">
                 <motion.span
@@ -119,7 +112,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         transition={{ duration: 1.2, delay: INTRO + 1, ease }}
         className="absolute bottom-16 right-[calc(42%-2.5rem)] z-20 hidden h-36 w-36 text-espresso md:block lg:right-[calc(38%-0.5rem)]"
       >
-        <RotatingBadge text={dict.intro} className="h-full w-full rounded-full bg-cream/80 backdrop-blur" />
+        <RotatingBadge text={dict.intro} className="h-full w-full rounded-full bg-cream" />
       </motion.div>
 
       <motion.a

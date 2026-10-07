@@ -26,8 +26,8 @@ export default function About({ dict }: { dict: Dictionary["about"] }) {
         <div className="relative mx-auto w-full max-w-md md:max-w-none">
           <motion.div
             style={{ y: yBig }}
-            initial={{ clipPath: "inset(0 0 100% 0 round 999px 999px 24px 24px)" }}
-            whileInView={{ clipPath: "inset(0 0 0% 0 round 999px 999px 24px 24px)" }}
+            initial={{ clipPath: "inset(0 0 100% 0 round 24px)" }}
+            whileInView={{ clipPath: "inset(0 0 0% 0 round 24px)" }}
             viewport={{ once: true, margin: "-15% 0px" }}
             transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
             className="relative aspect-[3/4] w-[82%] overflow-hidden"
