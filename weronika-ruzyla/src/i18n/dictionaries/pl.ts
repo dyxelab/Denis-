@@ -1,0 +1,128 @@
+import type { Dictionary } from "./en";
+
+const pl: Dictionary = {
+  meta: {
+    title: "Weronika Rużyła — Kosmetologia Estetyczna",
+    description:
+      "Indywidualnie dobrane zabiegi na skórę, fototerapia LED Dermalux Flex MD, mezoterapia bezigłowa i szkolenia dla kosmetologów. Umów wizytę u Weroniki Rużyły.",
+  },
+  intro: "Kosmetologia estetyczna",
+  menu: { open: "Menu", close: "Zamknij", language: "Język" },
+  nav: {
+    home: "Start",
+    about: "O mnie",
+    works: "Moje prace",
+    treatments: "Zabiegi",
+    equipment: "Mój sprzęt",
+    dermalux: "Dermalux Flex MD",
+    academy: "Moja akademia",
+    find: "Znajdź mnie",
+  },
+  bookingMessage: "Dzień dobry! Chciałabym umówić wizytę.",
+  hero: {
+    eyebrow: "Kosmetologia estetyczna",
+    titleA: "Twoje piękno",
+    titleB: "w pełnym blasku.",
+    subtitle:
+      "Indywidualnie dobrane zabiegi, profesjonalna technologia i rytuały pielęgnacji — w spokojnej przestrzeni stworzonej z myślą o Tobie.",
+    cta: "Umów wizytę",
+    secondary: "Poznaj zabiegi",
+    scroll: "Przewiń",
+  },
+  about: {
+    eyebrow: "O mnie",
+    title: "Cześć, jestem Weronika",
+    p1: "Jestem kosmetologiem estetycznym. Moja praca zaczyna się od słuchania — każda skóra ma swoją historię, a każdy plan zabiegowy powinien ją szanować.",
+    p2: "Łączę wiedzę kosmetologiczną, certyfikowane urządzenia profesjonalne i delikatność rytuałów wellness, abyś wychodziła ode mnie nie tylko ze zdrowszą skórą, ale też z chwilą tylko dla siebie.",
+    values: [
+      "Indywidualna diagnostyka skóry",
+      "Certyfikowane produkty profesjonalne",
+      "Technologia klasy medycznej",
+    ],
+  },
+  works: {
+    eyebrow: "Nasza codzienność",
+    title: "Chwile z gabinetu",
+    text: "Zabiegi, vouchery podarunkowe, produkty, którym ufam — zajrzyj do codzienności mojego gabinetu.",
+    hint: "Przesuń, aby zobaczyć więcej",
+    captions: {
+      voucherGift: "Voucher podarunkowy",
+      portrait: "Świąteczna sesja",
+      voucher: "Vouchery WR",
+      product: "Pielęgnacja MedEstelle",
+      facial: "Rytuał na twarz",
+      hands: "Dotyk i relaks",
+    },
+  },
+  treatments: {
+    eyebrow: "Odkryj swoje piękno",
+    title: "Zabiegi dopasowane do Twojej skóry",
+    items: [
+      { title: "Diagnostyka i konsultacja", text: "Wspólnie analizujemy Twoją skórę i tworzymy plan dopasowany do jej potrzeb i Twojego stylu życia." },
+      { title: "Zabiegi na twarz", text: "Oczyszczające, nawilżające i odmładzające rytuały z użyciem profesjonalnej kosmeceutyki." },
+      { title: "Mezoterapia bezigłowa", text: "Głębokie wprowadzenie składników aktywnych, które rewitalizują i ujędrniają skórę." },
+      { title: "Terapia światłem LED", text: "Fototerapia Dermalux Flex MD dla spokojnej, promiennej i odnowionej skóry." },
+      { title: "Plan pielęgnacji domowej", text: "Dobór kosmetyków, które przedłużą efekty zabiegów w domu." },
+    ],
+    cta: "Umów konsultację",
+  },
+  dermalux: {
+    eyebrow: "Dermalux Flex MD",
+    title: "Moc światła",
+    text: "Dermalux Flex MD to urządzenie do fototerapii LED klasy medycznej. Klinicznie przebadane długości fal światła pobudzają komórki skóry do działania — nieinwazyjnie, bezboleśnie i bez okresu rekonwalescencji.",
+    lights: [
+      { name: "Niebieskie", nm: "415 nm", text: "Oczyszcza i łagodzi skórę skłonną do niedoskonałości." },
+      { name: "Czerwone", nm: "633 nm", text: "Pobudza produkcję kolagenu i rewitalizuje." },
+      { name: "Bliska podczerwień", nm: "830 nm", text: "Koi, regeneruje i przyspiesza gojenie." },
+    ],
+    tags: ["Nieinwazyjnie", "Bezboleśnie", "Bez rekonwalescencji"],
+  },
+  equipment: {
+    eyebrow: "Mój sprzęt",
+    title: "Profesjonalna technologia, delikatne dłonie",
+    items: [
+      { title: "Fototerapia LED", brand: "Dermalux Flex MD", text: "Medyczne panele LED o trzech terapeutycznych długościach fal." },
+      { title: "Mezoterapia bezigłowa", brand: "Fusion Meso", text: "Koktajle składników aktywnych dobierane do potrzeb Twojej skóry." },
+      { title: "Kosmeceutyki", brand: "MedEstelle · GF", text: "Profesjonalne preparaty, których używam w gabinecie i polecam do pielęgnacji domowej." },
+    ],
+  },
+  academy: {
+    eyebrow: "Moja akademia",
+    title: "Ucz się ze mną",
+    text: "Szkolenia dla kosmetologów, którzy chcą się rozwijać: praktyczne kursy, małe grupy i indywidualny mentoring. Dzielę się wiedzą, techniką i pasją do skóry.",
+    points: ["Małe grupy", "Dużo praktyki", "Wsparcie po szkoleniu"],
+    cta: "Zapytaj o najbliższe szkolenie",
+    message: "Dzień dobry! Chciałabym dowiedzieć się więcej o szkoleniach.",
+  },
+  support: {
+    eyebrow: "Zawsze z Tobą",
+    title: "Nasze wsparcie: zawsze przy Tobie, kiedy tylko go potrzebujesz",
+    question: "Jak mogę pomóc mojej skórze?",
+    answer: "Napisz do mnie — razem znajdziemy rytuał idealny dla Ciebie ✨",
+    contact: "Zadzwoń!",
+    whatsapp: "Napisz na WhatsApp",
+    message: "Dzień dobry! Mam pytanie dotyczące mojej skóry.",
+  },
+  brands: { eyebrow: "Marki, którym ufam" },
+  find: {
+    eyebrow: "Znajdź mnie",
+    title: "Odwiedź gabinet",
+    text: "Wizyty wyłącznie po wcześniejszej rezerwacji. Zadzwoń lub napisz — odpowiem najszybciej, jak to możliwe.",
+    phone: "Telefon",
+    whatsapp: "WhatsApp",
+    social: "Social media",
+    hours: "Godziny otwarcia",
+    hoursValue: "Po umówieniu wizyty",
+    address: "Adres",
+  },
+  footer: {
+    quote: "Twoje piękno jest dziełem sztuki, my jesteśmy jedynie lustrem, które je odsłania",
+    sub: "Łączymy naukę o kosmetologii z rytuałami wellness, abyś mogła lśnić każdego dnia",
+    getInTouch: "Bądźmy w kontakcie",
+    rights: "Wszelkie prawa zastrzeżone.",
+    createdBy: "Projekt i realizacja",
+    backToTop: "Na górę",
+  },
+};
+
+export default pl;

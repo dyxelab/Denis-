@@ -1,0 +1,127 @@
+const en = {
+  meta: {
+    title: "Weronika Rużyła — Aesthetic Cosmetology",
+    description:
+      "Personalised skin treatments, Dermalux Flex MD LED phototherapy, needle-free mesotherapy and training for cosmetologists. Book your visit with Weronika Rużyła.",
+  },
+  intro: "Aesthetic cosmetology",
+  menu: { open: "Menu", close: "Close", language: "Language" },
+  nav: {
+    home: "Home",
+    about: "About me",
+    works: "My works",
+    treatments: "Treatments",
+    equipment: "My equipment",
+    dermalux: "Dermalux Flex MD",
+    academy: "My academy",
+    find: "Find me",
+  },
+  bookingMessage: "Hello! I would like to book an appointment.",
+  hero: {
+    eyebrow: "Aesthetic cosmetology",
+    titleA: "Your beauty,",
+    titleB: "in full light.",
+    subtitle:
+      "Personalised treatments, professional technology and rituals of care — in a calm space created just for you.",
+    cta: "Book now",
+    secondary: "Discover treatments",
+    scroll: "Scroll",
+  },
+  about: {
+    eyebrow: "About me",
+    title: "Hi, I'm Weronika",
+    p1: "I'm an aesthetic cosmetologist. My work starts with listening — every skin has its own story, and every treatment plan should respect it.",
+    p2: "I combine cosmetic science, certified professional devices and the gentleness of wellness rituals, so you leave not only with healthier skin, but also with a moment just for yourself.",
+    values: [
+      "Individual skin diagnosis",
+      "Certified professional products",
+      "Medical-grade technology",
+    ],
+  },
+  works: {
+    eyebrow: "Our reality",
+    title: "Moments from the studio",
+    text: "Treatments, gift vouchers, products I trust — a glimpse into everyday life in my studio.",
+    hint: "Drag to explore",
+    captions: {
+      voucherGift: "Gift voucher",
+      portrait: "Holiday session",
+      voucher: "WR vouchers",
+      product: "MedEstelle care",
+      facial: "Facial ritual",
+      hands: "Touch & relax",
+    },
+  },
+  treatments: {
+    eyebrow: "Unlock your beauty",
+    title: "Treatments designed around your skin",
+    items: [
+      { title: "Skin diagnosis & consultation", text: "We analyse your skin together and build a plan that fits its needs and your lifestyle." },
+      { title: "Facial treatments", text: "Cleansing, hydrating and rejuvenating rituals with professional cosmeceuticals." },
+      { title: "Needle-free mesotherapy", text: "Deep delivery of active ingredients that revitalise and firm the skin." },
+      { title: "LED light therapy", text: "Dermalux Flex MD phototherapy for calm, radiant and renewed skin." },
+      { title: "Home-care plan", text: "Product recommendations that extend the results of your treatments at home." },
+    ],
+    cta: "Book a consultation",
+  },
+  dermalux: {
+    eyebrow: "Dermalux Flex MD",
+    title: "The power of light",
+    text: "Dermalux Flex MD is a medical-grade LED phototherapy device. Clinically proven wavelengths of light energise skin cells — non-invasive, painless and with no downtime.",
+    lights: [
+      { name: "Blue", nm: "415 nm", text: "Purifies and calms blemish-prone skin." },
+      { name: "Red", nm: "633 nm", text: "Boosts collagen and revitalises." },
+      { name: "Near-infrared", nm: "830 nm", text: "Soothes, regenerates and accelerates healing." },
+    ],
+    tags: ["Non-invasive", "Painless", "No downtime"],
+  },
+  equipment: {
+    eyebrow: "My equipment",
+    title: "Professional technology, gentle hands",
+    items: [
+      { title: "LED phototherapy", brand: "Dermalux Flex MD", text: "Medical-grade LED panels with three therapeutic wavelengths." },
+      { title: "Needle-free mesotherapy", brand: "Fusion Meso", text: "Cocktails of active ingredients chosen for the needs of your skin." },
+      { title: "Cosmeceuticals", brand: "MedEstelle · GF", text: "Professional formulas I use in the studio and recommend for home care." },
+    ],
+  },
+  academy: {
+    eyebrow: "My academy",
+    title: "Learn with me",
+    text: "Training for cosmetologists who want to grow: practical courses, small groups and individual mentoring. I share knowledge, technique and my passion for skin.",
+    points: ["Small groups", "Plenty of hands-on practice", "Support after the course"],
+    cta: "Ask about the next course",
+    message: "Hello! I would like to know more about your training courses.",
+  },
+  support: {
+    eyebrow: "Always with you",
+    title: "Our support: always by your side, whenever you need it",
+    question: "How can I help my skin?",
+    answer: "Write to me — together we'll find the perfect ritual for you ✨",
+    contact: "Contact me!",
+    whatsapp: "Write on WhatsApp",
+    message: "Hello! I have a question about my skin.",
+  },
+  brands: { eyebrow: "Brands I trust" },
+  find: {
+    eyebrow: "Find me",
+    title: "Visit the studio",
+    text: "Visits by appointment only. Call or write to me — I'll answer as soon as I can.",
+    phone: "Phone",
+    whatsapp: "WhatsApp",
+    social: "Social media",
+    hours: "Opening hours",
+    hoursValue: "By appointment",
+    address: "Address",
+  },
+  footer: {
+    quote: "Your beauty is a work of art, we are simply the mirror that reveals it",
+    sub: "We combine cosmetic science and wellness rituals to help you shine every day",
+    getInTouch: "Get in touch",
+    rights: "All rights reserved.",
+    createdBy: "Created by",
+    backToTop: "Back to top",
+  },
+};
+
+export type Dictionary = typeof en;
+export default en;
