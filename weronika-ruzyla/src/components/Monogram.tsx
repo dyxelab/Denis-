@@ -22,7 +22,7 @@ export default function Monogram({ className, draw = false, delay = 0 }: Props) 
       />
       <motion.g
         fill="currentColor"
-        style={{ fontFamily: "var(--font-serif)", fontWeight: 300 }}
+        style={{ fontFamily: "var(--font-logo), Georgia, serif", fontWeight: 300 }}
         initial={draw ? { opacity: 0, y: 4 } : false}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: delay + 0.7, ease: "easeOut" }}
