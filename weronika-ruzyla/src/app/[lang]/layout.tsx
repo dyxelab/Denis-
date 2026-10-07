@@ -1,22 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import { Cormorant_Garamond, Outfit, Unbounded } from "next/font/google";
 import "../globals.css";
 import { hasLocale, localeLabels, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { images, site } from "@/content/site";
 
-const serif = Cormorant_Garamond({
-  variable: "--font-serif",
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  subsets: ["latin", "latin-ext"],
-});
-
-const sans = Jost({
-  variable: "--font-sans",
-  subsets: ["latin", "latin-ext"],
-});
+// titles: wide geometric caps; body: clean modern sans; logo: the serif of the WR monogram only
+const display = Unbounded({ variable: "--font-display", subsets: ["latin", "latin-ext"] });
+const sans = Outfit({ variable: "--font-sans", subsets: ["latin", "latin-ext"] });
+const logo = Cormorant_Garamond({ variable: "--font-logo", weight: "300", subsets: ["latin", "latin-ext"] });
 
 export const dynamicParams = false;
 
@@ -55,7 +48,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   if (!hasLocale(lang)) notFound();
 
   return (
-    <html lang={localeLabels[lang].htmlLang} className={`${serif.variable} ${sans.variable} antialiased`}>
+    <html lang={localeLabels[lang].htmlLang} className={`${display.variable} ${sans.variable} ${logo.variable} antialiased`}>
       <body>{children}</body>
     </html>
   );
