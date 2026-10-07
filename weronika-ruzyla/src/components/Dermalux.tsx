@@ -15,7 +15,7 @@ function wavePath(period: number, amp = 18, width = 600, mid = 40) {
   return d;
 }
 
-export default function Dermalux({ dict }: { dict: Dictionary["dermalux"] }) {
+export default function Dermalux({ dict, equipment }: { dict: Dictionary["dermalux"]; equipment: Dictionary["equipment"] }) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -28,7 +28,7 @@ export default function Dermalux({ dict }: { dict: Dictionary["dermalux"] }) {
   const color = colors[active];
 
   return (
-    <section id="dermalux" className="relative overflow-hidden bg-ink px-5 py-24 text-ivory sm:px-8 md:py-36">
+    <section id="dermalux" className="relative overflow-hidden bg-ink px-5 py-20 text-ivory sm:px-8 md:py-28">
       {/* ambient glow following the active wavelength */}
       <motion.div
         aria-hidden="true"
@@ -38,7 +38,7 @@ export default function Dermalux({ dict }: { dict: Dictionary["dermalux"] }) {
       />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 md:grid-cols-2">
-        <div>
+        <div className="md:order-2">
           <SectionHeading eyebrow={dict.eyebrow} title={dict.title} tone="light" />
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-lg text-lg font-light leading-relaxed text-sand">{dict.text}</p>
@@ -52,9 +52,9 @@ export default function Dermalux({ dict }: { dict: Dictionary["dermalux"] }) {
           </Reveal>
         </div>
 
-        <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+        <div className="md:order-1" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
           {/* LED panel */}
-          <Reveal className="relative mx-auto aspect-square w-full max-w-md">
+          <Reveal className="relative mx-auto aspect-square w-full max-w-[22rem] md:max-w-md">
             <div className="absolute inset-0 rounded-full border border-ivory/10" />
             <div className="absolute inset-[12%] rounded-full border border-ivory/10" />
             <motion.div
@@ -120,6 +120,21 @@ export default function Dermalux({ dict }: { dict: Dictionary["dermalux"] }) {
               </button>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* equipment, folded into the technology section to keep the page short */}
+      <div id="equipment" className="relative mx-auto mt-20 max-w-7xl border-t border-ivory/10 pt-12">
+        <p className="eyebrow text-center text-sand">{equipment.eyebrow}</p>
+        <h3 className="display mt-4 text-center text-[clamp(1.9rem,4vw,3rem)] text-ivory">{equipment.title}</h3>
+        <div className="mt-10 grid gap-px overflow-hidden rounded-[2rem] border border-ivory/10 bg-ivory/10 md:grid-cols-3">
+          {equipment.items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.1} className="group bg-ink p-7 transition-colors duration-500 hover:bg-espresso md:p-9">
+              <p className="eyebrow text-[0.6rem] text-rose">{item.brand}</p>
+              <p className="display mt-3 text-3xl text-ivory transition-all duration-500 group-hover:italic">{item.title}</p>
+              <p className="mt-3 text-sm font-light leading-relaxed text-sand">{item.text}</p>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

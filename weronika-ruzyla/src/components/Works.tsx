@@ -1,112 +1,154 @@
 "use client";
 
 import Image from "next/image";
-import { animate, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { images } from "@/content/site";
 import SectionHeading from "./SectionHeading";
-import Reveal from "./Reveal";
 import { ArrowRight } from "./Icons";
 
-const items = [
-  { key: "voucherGift", tall: false },
-  { key: "facial", tall: true },
-  { key: "portrait", tall: false },
-  { key: "voucher", tall: true },
-  { key: "hands", tall: false },
-  { key: "product", tall: true },
-] as const;
+const keys = ["voucherGift", "facial", "portrait", "voucher", "hands", "product"] as const;
+const N = keys.length;
+const slides = [...keys, ...keys, ...keys]; // three copies so the loop can wrap invisibly
+const INTERVAL = 3200;
 
+/** Centered, auto-advancing infinite carousel: the active photo sits in the middle, mirrored by its neighbours. */
 export default function Works({ dict }: { dict: Dictionary["works"] }) {
-  const viewport = useRef<HTMLDivElement>(null);
-  const track = useRef<HTMLDivElement>(null);
-  const [limit, setLimit] = useState(0);
-  const x = useMotionValue(0);
-  const progress = useSpring(useTransform(x, (v) => (limit ? Math.min(1, Math.max(0, -v / limit)) : 0)), { stiffness: 200, damping: 30 });
+  const frame = useRef<HTMLDivElement>(null);
+  const [index, setIndex] = useState<number>(N);
+  const [instant, setInstant] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [dims, setDims] = useState({ width: 0, card: 280, gap: 24 });
 
   useEffect(() => {
     const measure = () => {
-      if (!viewport.current || !track.current) return;
-      setLimit(Math.max(0, track.current.scrollWidth - viewport.current.clientWidth));
+      const width = frame.current?.clientWidth ?? 0;
+      const card = width < 640 ? Math.round(width * 0.68) : 320;
+      setDims({ width, card, gap: width < 640 ? 14 : 28 });
     };
     measure();
-    const ro = new ResizeObserver(measure);
-    if (track.current) ro.observe(track.current);
     window.addEventListener("resize", measure);
-    return () => {
-      ro.disconnect();
-      window.removeEventListener("resize", measure);
-    };
+    return () => window.removeEventListener("resize", measure);
   }, []);
 
-  const nudge = (dir: 1 | -1) => {
-    const next = Math.min(0, Math.max(-limit, x.get() - dir * 380));
-    animate(x, next, { type: "spring", stiffness: 120, damping: 24 });
+  const go = useCallback((dir: 1 | -1) => {
+    setInstant(false);
+    setIndex((i) => i + dir);
+  }, []);
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => go(1), INTERVAL);
+    return () => clearInterval(id);
+  }, [paused, go]);
+
+  // after sliding into the outer copies, jump back to the middle copy without animation
+  const onSettled = () => {
+    if (index >= 2 * N || index < N) {
+      setInstant(true);
+      setIndex((i) => ((i % N) + N) % N + N);
+    }
   };
 
-  return (
-    <section id="works" className="overflow-hidden bg-sand py-24 md:py-36">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 sm:px-8 md:flex-row md:items-end md:justify-between">
-        <SectionHeading eyebrow={dict.eyebrow} title={dict.title} icon="heart" />
-        <Reveal delay={0.2} className="max-w-sm">
-          <p className="text-lg font-light leading-relaxed text-mocha">{dict.text}</p>
-          <div className="mt-6 flex items-center gap-3">
-            <button type="button" aria-label="Previous" onClick={() => nudge(-1)} className="flex h-12 w-12 items-center justify-center rounded-full border border-espresso/30 transition-colors hover:bg-espresso hover:text-ivory">
-              <ArrowRight className="h-4 w-4 rotate-180" />
-            </button>
-            <button type="button" aria-label="Next" onClick={() => nudge(1)} className="flex h-12 w-12 items-center justify-center rounded-full border border-espresso/30 transition-colors hover:bg-espresso hover:text-ivory">
-              <ArrowRight className="h-4 w-4" />
-            </button>
-            <span className="eyebrow ml-3 text-[0.6rem] text-mocha">{dict.hint}</span>
-          </div>
-        </Reveal>
-      </div>
+  useEffect(() => {
+    if (!instant) return;
+    const id = requestAnimationFrame(() => setInstant(false));
+    return () => cancelAnimationFrame(id);
+  }, [instant]);
 
-      <div ref={viewport} className="mt-16 cursor-grab active:cursor-grabbing">
+  const step = dims.card + dims.gap;
+  const x = dims.width / 2 - dims.card / 2 - index * step;
+  const active = ((index % N) + N) % N;
+
+  return (
+    <section id="works" className="overflow-hidden bg-sand py-20 md:py-28">
+      <SectionHeading eyebrow={dict.eyebrow} title={dict.title} icon="heart" align="center" className="px-5" />
+      <p className="mx-auto mt-5 max-w-lg px-5 text-center font-light leading-relaxed text-mocha">{dict.text}</p>
+
+      <div
+        ref={frame}
+        className="relative mt-12"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setTimeout(() => setPaused(false), 2500)}
+      >
         <motion.div
-          ref={track}
+          className="flex items-center"
+          style={{ gap: dims.gap }}
+          animate={{ x }}
+          transition={instant ? { duration: 0 } : { type: "spring", stiffness: 70, damping: 18 }}
+          onAnimationComplete={onSettled}
           drag="x"
-          dragConstraints={{ left: -limit, right: 0 }}
-          dragElastic={0.08}
-          style={{ x }}
-          className="flex w-max items-start gap-5 px-5 sm:gap-8 sm:px-8 lg:px-[max(2rem,calc((100vw-80rem)/2+2rem))]"
+          dragConstraints={{ left: x, right: x }}
+          dragElastic={0.25}
+          onDragEnd={(_, info) => {
+            if (info.offset.x < -40) go(1);
+            else if (info.offset.x > 40) go(-1);
+          }}
         >
-          {items.map(({ key, tall }, i) => {
-            const img = images[key];
+          {slides.map((key, i) => {
+            const isActive = i === index;
             return (
               <motion.figure
-                key={key}
-                initial={{ opacity: 0, y: 60 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className={`group shrink-0 ${tall ? "mt-0 w-[68vw] sm:w-[340px]" : "mt-16 w-[60vw] sm:w-[300px]"}`}
+                key={i}
+                className="shrink-0 cursor-grab active:cursor-grabbing"
+                style={{ width: dims.card }}
+                animate={{ scale: isActive ? 1 : 0.84, opacity: isActive ? 1 : 0.55 }}
+                transition={instant ? { duration: 0 } : { duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className={`relative overflow-hidden rounded-[1.75rem] bg-sand-deep ${tall ? "aspect-[3/4.4]" : "aspect-[3/3.6]"}`}>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[1.75rem] rounded-t-[999px] bg-sand-deep shadow-xl shadow-espresso/10">
                   <Image
-                    src={img.src}
+                    src={images[key].src}
                     alt={dict.captions[key]}
                     fill
                     draggable={false}
-                    sizes="(min-width: 640px) 340px, 68vw"
-                    className="pointer-events-none object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.07]"
+                    sizes="(min-width: 640px) 320px, 68vw"
+                    className="pointer-events-none object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 </div>
-                <figcaption className="mt-4 flex items-baseline justify-between gap-3 px-1">
-                  <span className="display text-2xl italic text-espresso">{dict.captions[key]}</span>
-                  <span className="eyebrow text-[0.6rem] text-mocha">{String(i + 1).padStart(2, "0")}</span>
-                </figcaption>
               </motion.figure>
             );
           })}
         </motion.div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-7xl px-5 sm:px-8">
-        <div className="h-px w-full bg-espresso/15">
-          <motion.div style={{ scaleX: progress }} className="h-px origin-left bg-espresso" />
+      <div className="mt-8 flex flex-col items-center gap-5 px-5">
+        <motion.p key={active} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="display text-3xl italic text-espresso">
+          {dict.captions[keys[active]]}
+        </motion.p>
+        <div className="flex items-center gap-5">
+          <button type="button" aria-label="Previous" onClick={() => go(-1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/30 transition-colors hover:bg-espresso hover:text-ivory">
+            <ArrowRight className="h-4 w-4 rotate-180" />
+          </button>
+          <div className="flex gap-2">
+            {keys.map((k, i) => (
+              <button
+                key={k}
+                type="button"
+                aria-label={dict.captions[k]}
+                onClick={() => {
+                  setInstant(false);
+                  setIndex(N + i);
+                }}
+                className="relative h-1.5 w-6 overflow-hidden rounded-full bg-espresso/15"
+              >
+                {i === active && (
+                  <motion.span
+                    key={`${index}-${paused}`}
+                    className="absolute inset-y-0 left-0 rounded-full bg-espresso"
+                    initial={{ width: paused ? "100%" : "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: paused ? 0 : INTERVAL / 1000, ease: "linear" }}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+          <button type="button" aria-label="Next" onClick={() => go(1)} className="flex h-11 w-11 items-center justify-center rounded-full border border-espresso/30 transition-colors hover:bg-espresso hover:text-ivory">
+            <ArrowRight className="h-4 w-4" />
+          </button>
         </div>
       </div>
     </section>

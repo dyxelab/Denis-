@@ -42,7 +42,6 @@ const en = {
     eyebrow: "Our reality",
     title: "Moments from the studio",
     text: "Treatments, gift vouchers, products I trust — a glimpse into everyday life in my studio.",
-    hint: "Drag to explore",
     captions: {
       voucherGift: "Gift voucher",
       portrait: "Holiday session",

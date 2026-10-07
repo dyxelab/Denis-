@@ -44,7 +44,6 @@ const it: Dictionary = {
     eyebrow: "La nostra realtà",
     title: "Momenti dallo studio",
     text: "Trattamenti, buoni regalo, prodotti di cui mi fido: uno sguardo sulla quotidianità del mio studio.",
-    hint: "Trascina per scoprire",
     captions: {
       voucherGift: "Buono regalo",
       portrait: "Sessione natalizia",

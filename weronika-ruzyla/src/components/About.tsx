@@ -15,7 +15,7 @@ export default function About({ dict }: { dict: Dictionary["about"] }) {
   const ySmall = useTransform(scrollYProgress, [0, 1], ["15%", "-30%"]);
 
   return (
-    <section ref={ref} id="about" className="relative overflow-hidden bg-cream px-5 py-24 sm:px-8 md:py-36">
+    <section ref={ref} id="about" className="relative overflow-hidden bg-cream px-5 py-20 sm:px-8 md:py-28">
       <span
         aria-hidden="true"
         className="display pointer-events-none absolute -right-8 top-10 select-none text-[28vw] italic leading-none text-sand/40 md:text-[18vw]"

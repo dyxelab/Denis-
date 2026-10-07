@@ -44,7 +44,6 @@ const pl: Dictionary = {
     eyebrow: "Nasza codzienność",
     title: "Chwile z gabinetu",
     text: "Zabiegi, vouchery podarunkowe, produkty, którym ufam — zajrzyj do codzienności mojego gabinetu.",
-    hint: "Przesuń, aby zobaczyć więcej",
     captions: {
       voucherGift: "Voucher podarunkowy",
       portrait: "Świąteczna sesja",

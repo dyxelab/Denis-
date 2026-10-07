@@ -8,11 +8,9 @@ import About from "@/components/About";
 import Works from "@/components/Works";
 import Treatments from "@/components/Treatments";
 import Dermalux from "@/components/Dermalux";
-import Equipment from "@/components/Equipment";
 import Academy from "@/components/Academy";
-import Support from "@/components/Support";
 import BrandMarquee from "@/components/BrandMarquee";
-import FindMe from "@/components/FindMe";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
 
@@ -27,15 +25,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Header lang={lang} dict={dict} />
       <main>
         <Hero dict={dict} />
+        <BrandMarquee label={dict.brands.eyebrow} />
         <About dict={dict.about} />
         <Works dict={dict.works} />
         <Treatments dict={dict} />
-        <Dermalux dict={dict.dermalux} />
-        <Equipment dict={dict.equipment} />
-        <Support dict={dict.support} />
+        <Dermalux dict={dict.dermalux} equipment={dict.equipment} />
         <Academy dict={dict.academy} />
-        <BrandMarquee label={dict.brands.eyebrow} />
-        <FindMe dict={dict} />
+        <Contact dict={dict} />
       </main>
       <Footer dict={dict} />
       <FloatingBook dict={dict} />

@@ -107,7 +107,7 @@ body::after {
 }
 
 .marquee-track {
-  animation: marquee 32s linear infinite;
+  animation: marquee 26s linear infinite;
 }
 @keyframes marquee {
   to { transform: translateX(-50%); }
@@ -118,5 +118,5 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .shine::after, .marquee-track { animation: none; }
+  .shine::after { animation: none; }
 }

@@ -34,7 +34,6 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           transition={{ staggerChildren: 0.05 }}
           className="display mt-10 text-[clamp(2rem,5vw,3.6rem)] italic leading-[1.1]"
         >
-          “
           {words.map((w, i) => (
             <motion.span
               key={i}
@@ -42,11 +41,11 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               variants={{ hidden: { opacity: 0, y: 20, filter: "blur(8px)" }, show: { opacity: 1, y: 0, filter: "blur(0px)" } }}
               transition={{ duration: 0.8 }}
             >
+              {i === 0 ? "“" : ""}
               {w}
-              {i < words.length - 1 ? " " : ""}
+              {i < words.length - 1 ? "\u00A0" : "”"}
             </motion.span>
           ))}
-          ”
         </motion.blockquote>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
