@@ -29,10 +29,10 @@ export default function Intro({ label }: { label: string }) {
         >
           <Monogram draw className="h-28 w-auto sm:h-36" />
           <motion.p
-            initial={{ opacity: 0, letterSpacing: "0.1em" }}
-            animate={{ opacity: 1, letterSpacing: "0.04em" }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.9, ease: "easeOut" }}
-            className="display mt-8 text-4xl italic sm:text-5xl"
+            className="display mt-8 text-xl tracking-[0.18em] sm:text-2xl"
           >
             Weronika Rużyła
           </motion.p>
@@ -45,9 +45,9 @@ export default function Intro({ label }: { label: string }) {
             {label}
           </motion.p>
           <motion.span
-            className="absolute bottom-0 left-0 h-[2px] bg-ivory/70"
-            initial={{ width: "0%" }}
-            animate={{ width: "100%" }}
+            className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-ivory/70"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
             transition={{ duration: 2.4, ease: "easeInOut" }}
           />
         </motion.div>

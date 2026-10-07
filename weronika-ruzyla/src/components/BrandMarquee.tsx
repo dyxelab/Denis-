@@ -4,7 +4,7 @@ import { site } from "@/content/site";
 export default function BrandMarquee({ label }: { label: string }) {
   const row = [...site.brands, ...site.brands];
   return (
-    <section aria-label={label} className="relative overflow-hidden border-y border-espresso/10 bg-sand-deep py-6 md:py-8">
+    <section aria-label={label} className="relative overflow-hidden border-y border-espresso/10 bg-sand-deep py-3 md:py-4">
       <p className="sr-only">{site.brands.join(", ")}</p>
       <div className="marquee-track flex w-max hover:[animation-play-state:paused]" aria-hidden="true">
         {[0, 1].map((copy) => (
@@ -12,8 +12,8 @@ export default function BrandMarquee({ label }: { label: string }) {
             {row.map((brand, i) => (
               <span
                 key={`${copy}-${i}`}
-                className={`whitespace-nowrap px-10 text-4xl text-ink sm:px-16 sm:text-6xl ${
-                  i % 2 ? "font-light tracking-[0.3em]" : "font-semibold tracking-[0.12em]"
+                className={`whitespace-nowrap px-7 text-xl text-ink sm:px-10 sm:text-3xl ${
+                  i % 2 ? "font-light tracking-[0.3em]" : "font-display tracking-[0.08em]"
                 }`}
               >
                 {brand}
@@ -22,8 +22,8 @@ export default function BrandMarquee({ label }: { label: string }) {
           </div>
         ))}
       </div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-sand-deep to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-sand-deep to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-sand-deep to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-sand-deep to-transparent" />
     </section>
   );
 }

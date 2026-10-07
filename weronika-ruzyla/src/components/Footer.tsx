@@ -32,13 +32,13 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           whileInView="show"
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ staggerChildren: 0.05 }}
-          className="display mt-10 text-[clamp(2rem,5vw,3.6rem)] italic leading-[1.1]"
+          className="mt-10 text-[clamp(1.45rem,4vw,2.5rem)] font-extralight leading-snug"
         >
           {words.map((w, i) => (
             <motion.span
               key={i}
               className="inline-block"
-              variants={{ hidden: { opacity: 0, y: 20, filter: "blur(8px)" }, show: { opacity: 1, y: 0, filter: "blur(0px)" } }}
+              variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8 }}
             >
               {i === 0 ? "“" : ""}
@@ -52,7 +52,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="mt-8 max-w-xl text-lg font-light leading-relaxed text-sand"
+          className="mt-6 max-w-xl text-base leading-relaxed text-sand"
         >
           {f.sub}
         </motion.p>
@@ -75,7 +75,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               viewport={{ once: true }}
               transition={{ type: "spring", delay: 0.2 + i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 transition-colors hover:border-rose hover:bg-rose"
+              className="flex h-16 w-16 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 glass-dark transition-colors hover:border-rose hover:bg-rose"
             >
               <Icon className="h-6 w-6" />
             </motion.a>

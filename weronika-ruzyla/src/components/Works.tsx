@@ -13,7 +13,7 @@ const rows: Key[][] = [
 export default function Works({ dict }: { dict: Dictionary["works"] }) {
   return (
     <section id="works" className="overflow-hidden bg-sand py-20 md:py-28">
-      <SectionHeading eyebrow={dict.eyebrow} title={dict.title} icon="heart" align="center" className="px-5" />
+      <SectionHeading eyebrow={dict.eyebrow} title={dict.title} className="px-5" />
       <p className="mx-auto mt-5 max-w-lg px-5 text-center font-light leading-relaxed text-mocha">{dict.text}</p>
 
       <div className="mt-12 flex flex-col gap-3 sm:gap-5">
@@ -30,7 +30,7 @@ export default function Works({ dict }: { dict: Dictionary["works"] }) {
                     return (
                       <div
                         key={`${copy}-${i}`}
-                        className="relative h-[200px] shrink-0 overflow-hidden rounded-md sm:h-[320px]"
+                        className="relative h-[200px] shrink-0 overflow-hidden rounded-2xl sm:h-[320px]"
                         style={{ aspectRatio: `${img.width} / ${img.height}` }}
                       >
                         <Image
