@@ -10,7 +10,6 @@ import Treatments from "@/components/Treatments";
 import BeforeAfter from "@/components/BeforeAfter";
 import Dermalux from "@/components/Dermalux";
 import Academy from "@/components/Academy";
-import BrandMarquee from "@/components/BrandMarquee";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
@@ -26,7 +25,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Header lang={lang} dict={dict} />
       <main>
         <Hero dict={dict} />
-        <BrandMarquee label={dict.brands.eyebrow} />
         <About dict={dict.about} />
         <Works dict={dict.works} />
         <Treatments dict={dict} />

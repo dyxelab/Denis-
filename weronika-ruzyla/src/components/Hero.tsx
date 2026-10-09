@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink, images } from "@/content/site";
 import { ArrowRight } from "./Icons";
+import BrandMarquee from "./BrandMarquee";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const INTRO = 2.2; // wait for the intro curtain before revealing the hero
@@ -24,7 +25,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
 
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-5 pb-20 pt-32 text-center text-ivory sm:pb-24">
+      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-5 pb-36 pt-32 text-center text-ivory sm:pb-40">
         <h1 className="display text-[clamp(2rem,7.4vw,4.6rem)]">
           {[t.titleA, t.titleB].map((line, i) => (
             <span key={i} className="block overflow-hidden pb-[0.08em]">
@@ -67,6 +68,15 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           </a>
         </motion.div>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: INTRO + 1.1, ease }}
+        className="absolute inset-x-0 bottom-16 z-10 mx-auto w-[calc(100%-2.5rem)] max-w-xl"
+      >
+        <BrandMarquee label={dict.brands.eyebrow} />
+      </motion.div>
 
       <motion.a
         href="#about"
