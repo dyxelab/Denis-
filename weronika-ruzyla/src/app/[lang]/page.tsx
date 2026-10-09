@@ -4,6 +4,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import Intro from "@/components/Intro";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import BrandMarquee from "@/components/BrandMarquee";
 import About from "@/components/About";
 import Works from "@/components/Works";
 import Treatments from "@/components/Treatments";
@@ -25,6 +26,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       <Header lang={lang} dict={dict} />
       <main>
         <Hero dict={dict} />
+        <BrandMarquee label={dict.brands.eyebrow} />
         <About dict={dict.about} />
         <Works dict={dict.works} />
         <Treatments dict={dict} />
