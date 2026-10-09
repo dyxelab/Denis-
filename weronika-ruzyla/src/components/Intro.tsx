@@ -27,7 +27,7 @@ export default function Intro({ label }: { label: string }) {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,#fbe4ea_0%,#efbfcc_55%,#dc98ac_100%)] text-[#5b2a3a]"
           exit={{ y: "-100%", transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] } }}
         >
-          <Monogram draw className="h-28 w-auto sm:h-36" />
+          <Monogram draw className="h-28 w-auto text-black sm:h-36" />
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
