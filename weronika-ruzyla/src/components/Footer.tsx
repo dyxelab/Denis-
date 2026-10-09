@@ -11,7 +11,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
   const f = dict.footer;
   const words = f.quote.split(" ");
   return (
-    <footer className="relative overflow-hidden bg-ink text-ivory">
+    <footer data-tone="dark" className="relative overflow-hidden bg-ink text-ivory">
       <Image src={images.hero.src} alt="" fill sizes="100vw" className="object-cover object-[50%_30%] opacity-25 grayscale" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
 

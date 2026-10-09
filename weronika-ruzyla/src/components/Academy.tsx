@@ -10,7 +10,7 @@ import { ArrowRight } from "./Icons";
 
 export default function Academy({ dict }: { dict: Dictionary["academy"] }) {
   return (
-    <section id="academy" className="relative overflow-hidden px-5 py-20 sm:px-8 md:py-28">
+    <section id="academy" data-tone="dark" className="relative overflow-hidden px-5 py-20 sm:px-8 md:py-28">
       {/* static blurred photo behind a glass panel */}
       <Image src={images.voucher.src} alt="" fill sizes="100vw" className="scale-110 object-cover blur-md" />
       <div className="absolute inset-0 bg-espresso/55" />

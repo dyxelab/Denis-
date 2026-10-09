@@ -14,7 +14,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
   const t = dict.hero;
 
   return (
-    <section id="home" className="relative flex min-h-[100svh] items-end justify-center overflow-hidden bg-ink">
+    <section id="home" data-tone="dark" className="relative flex min-h-[100svh] items-end justify-center overflow-hidden bg-ink">
       <motion.div
         initial={{ scale: 1.18 }}
         animate={{ scale: 1 }}

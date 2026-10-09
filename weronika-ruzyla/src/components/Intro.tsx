@@ -24,7 +24,7 @@ export default function Intro({ label }: { label: string }) {
       {visible && (
         <motion.div
           key="intro"
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-sand text-ivory"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,#4a3d33_0%,#2b2420_55%,#171310_100%)] text-ivory"
           exit={{ y: "-100%", transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] } }}
         >
           <Monogram draw className="h-28 w-auto sm:h-36" />
@@ -32,7 +32,7 @@ export default function Intro({ label }: { label: string }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.9, ease: "easeOut" }}
-            className="display mt-8 text-xl tracking-[0.18em] sm:text-2xl"
+            className="mt-8 font-logo text-4xl tracking-[0.06em] sm:text-5xl"
           >
             Weronika Rużyła
           </motion.p>
@@ -40,12 +40,12 @@ export default function Intro({ label }: { label: string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.85 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="eyebrow mt-4"
+            className="eyebrow mt-4 text-sand"
           >
             {label}
           </motion.p>
           <motion.span
-            className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-ivory/70"
+            className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-rose-soft/70"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 2.4, ease: "easeInOut" }}

@@ -30,7 +30,7 @@ export default function Dermalux({ dict, equipment }: Props) {
   const color = colors[active];
 
   return (
-    <section id="dermalux" className="relative overflow-hidden bg-ink px-5 py-20 text-ivory sm:px-8 md:py-28">
+    <section id="dermalux" data-tone="dark" className="relative overflow-hidden bg-ink px-5 py-20 text-ivory sm:px-8 md:py-28">
       {/* ambient light following the active wavelength: a gradient, no blur filter */}
       <motion.div
         aria-hidden="true"

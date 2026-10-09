@@ -15,17 +15,32 @@ type Props = { lang: Locale; dict: Dictionary };
 
 export default function Header({ lang, dict }: Props) {
   const { scrollY } = useScroll();
-  const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(true); // is the section under the header dark?
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (y) => {
     const prev = scrollY.getPrevious() ?? 0;
-    const nextScrolled = y > 40;
-    if (nextScrolled !== scrolled) setScrolled(nextScrolled);
     if (y > 400 && y > prev + 4 && !hidden) setHidden(true);
     else if (y < prev - 4 && hidden) setHidden(false);
   });
+
+  // watch only the thin band behind the header: dark sections switch it to light text
+  useEffect(() => {
+    const visible = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) visible.add(e.target);
+          else visible.delete(e.target);
+        }
+        setDark(visible.size > 0);
+      },
+      { rootMargin: "-28px 0px -96% 0px" },
+    );
+    document.querySelectorAll('[data-tone="dark"]').forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
 
   useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
@@ -40,17 +55,15 @@ export default function Header({ lang, dict }: Props) {
         initial={{ y: -100 }}
         animate={{ y: hidden && !open ? -110 : 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="fixed inset-x-0 top-0 z-40 px-3 pt-2 sm:px-6 sm:pt-3"
+        className="fixed inset-x-0 top-0 z-40 px-3 pt-2 sm:px-6 sm:pt-2.5"
       >
         <div
-          className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full px-3 py-1 transition-colors duration-500 sm:px-5 ${
-            scrolled
-              ? "border border-white/70 bg-ivory/90 text-espresso shadow-[0_10px_30px_-18px_rgba(43,36,32,0.5)] md:bg-ivory/60 md:backdrop-blur-md"
-              : "border border-white/25 bg-white/10 text-ivory"
+          className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border px-3 py-0.5 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
+            dark ? "border-white/25 bg-white/10 text-ivory" : "border-white/50 bg-white/25 text-espresso"
           }`}
         >
           <a href="#home" aria-label={site.name} className="justify-self-start transition-transform hover:scale-105">
-            <Monogram className="h-9 w-auto sm:h-10" />
+            <Monogram className="h-8 w-auto sm:h-9" />
           </a>
           <a href="#home" className="display text-center text-[0.68rem] leading-tight tracking-[0.22em] sm:text-[0.8rem]">
             Weronika Rużyła
@@ -62,7 +75,7 @@ export default function Header({ lang, dict }: Props) {
               onClick={() => setOpen(true)}
               aria-label={dict.menu.open}
               aria-expanded={open}
-              className="group flex h-10 w-10 flex-col items-center justify-center gap-[6px]"
+              className="group flex h-9 w-9 flex-col items-center justify-center gap-[6px]"
             >
               <span className="h-px w-6 bg-current transition-all duration-300 group-hover:w-4" />
               <span className="h-px w-4 bg-current transition-all duration-300 group-hover:w-6" />
