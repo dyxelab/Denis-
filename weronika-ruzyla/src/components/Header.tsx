@@ -9,7 +9,7 @@ import Monogram from "./Monogram";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
 
-const sections = ["home", "about", "works", "treatments", "dermalux", "equipment", "academy", "find"] as const;
+const sections = ["home", "about", "works", "treatments", "results", "dermalux", "equipment", "academy", "find"] as const;
 
 type Props = { lang: Locale; dict: Dictionary };
 

@@ -1,35 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { logo } from "@/content/site";
 
 type Props = { className?: string; draw?: boolean; delay?: number };
 
-/** "WR" monogram in an oval frame, recreated from the brand logo. */
-export default function Monogram({ className, draw = false, delay = 0 }: Props) {
+/**
+ * The real WR logo, used as a CSS mask so it takes the current text colour
+ * (white on dark sections, espresso on light ones) from a single file.
+ */
+export default function Monogram({ className = "", draw = false, delay = 0 }: Props) {
   return (
-    <svg viewBox="0 0 60 80" className={className} aria-hidden="true">
-      <motion.ellipse
-        cx="30"
-        cy="40"
-        rx="28"
-        ry="38"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="0.9"
-        initial={draw ? { pathLength: 0, opacity: 0 } : false}
-        animate={{ pathLength: 1, opacity: 1 }}
-        transition={{ duration: 1.6, delay, ease: [0.65, 0, 0.35, 1] }}
-      />
-      <motion.g
-        fill="currentColor"
-        style={{ fontFamily: "var(--font-logo), Georgia, serif", fontWeight: 300 }}
-        initial={draw ? { opacity: 0, y: 4 } : false}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: delay + 0.7, ease: "easeOut" }}
-      >
-        <text x="9" y="43" fontSize="30">W</text>
-        <text x="29" y="57" fontSize="28">R</text>
-      </motion.g>
-    </svg>
+    <motion.span
+      role="img"
+      aria-hidden="true"
+      className={`inline-block bg-current ${className}`}
+      style={{
+        aspectRatio: `${logo.width} / ${logo.height}`,
+        WebkitMaskImage: `url(${logo.src})`,
+        maskImage: `url(${logo.src})`,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+      }}
+      initial={draw ? { opacity: 0, scale: 0.85, clipPath: "inset(100% 0 0 0)" } : false}
+      animate={{ opacity: 1, scale: 1, clipPath: "inset(0% 0 0 0)" }}
+      transition={{ duration: 1.4, delay, ease: [0.65, 0, 0.35, 1] }}
+    />
   );
 }

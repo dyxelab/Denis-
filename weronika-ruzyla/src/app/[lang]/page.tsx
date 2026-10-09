@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Works from "@/components/Works";
 import Treatments from "@/components/Treatments";
+import BeforeAfter from "@/components/BeforeAfter";
 import Dermalux from "@/components/Dermalux";
 import Academy from "@/components/Academy";
 import BrandMarquee from "@/components/BrandMarquee";
@@ -29,6 +30,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <About dict={dict.about} />
         <Works dict={dict.works} />
         <Treatments dict={dict} />
+        <BeforeAfter dict={dict.results} />
         <Dermalux dict={dict.dermalux} equipment={dict.equipment} />
         <Academy dict={dict.academy} />
         <Contact dict={dict} />

@@ -25,6 +25,17 @@ export const whatsappLink = (message: string) =>
 
 export const bookingLink = (message: string) => site.bookingUrl || whatsappLink(message);
 
+export const logo = { src: "/images/logo-wr.png", width: 341, height: 445 };
+
+// before/after pairs, 525x700 each; captions live in the dictionaries (results.items, same order)
+export const results = [
+  { before: "/images/results/ba-1-before.jpg", after: "/images/results/ba-1-after.jpg" },
+  { before: "/images/results/ba-2-before.jpg", after: "/images/results/ba-2-after.jpg" },
+  { before: "/images/results/ba-3-before.jpg", after: "/images/results/ba-3-after.jpg" },
+  { before: "/images/results/ba-4-before.jpg", after: "/images/results/ba-4-after.jpg" },
+  { before: "/images/results/ba-5-before.jpg", after: "/images/results/ba-5-after.jpg" },
+];
+
 export const images = {
   hero: { src: "/images/hero.jpg", width: 942, height: 1451 },
   voucherGift: { src: "/images/gallery-voucher-gift.jpg", width: 538, height: 649 },

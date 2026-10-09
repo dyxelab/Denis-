@@ -13,6 +13,7 @@ const it: Dictionary = {
     about: "Chi sono",
     works: "I miei lavori",
     treatments: "Trattamenti",
+    results: "Prima e dopo",
     equipment: "Le mie attrezzature",
     dermalux: "Dermalux Flex MD",
     academy: "La mia accademia",
@@ -64,6 +65,15 @@ const it: Dictionary = {
       { title: "Piano di cura a casa", text: "Consigli sui prodotti per prolungare a casa i risultati dei trattamenti." },
     ],
     cta: "Prenota una consulenza",
+  },
+  results: {
+    eyebrow: "Risultati",
+    title: "Prima e dopo",
+    text: "Risultati reali dei trattamenti delle mie clienti. Trascina lo slider per confrontare la pelle prima e dopo.",
+    before: "Prima",
+    after: "Dopo",
+    hint: "Trascina per confrontare",
+    items: ["Cuoio capelluto", "Braccio", "Zona intorno alla bocca", "Pelle acneica", "Arrossamenti"],
   },
   dermalux: {
     eyebrow: "Dermalux Flex MD",

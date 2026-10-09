@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink } from "@/content/site";
 
@@ -9,9 +9,22 @@ import { bookingLink } from "@/content/site";
 export default function FloatingBook({ dict }: { dict: Dictionary }) {
   const { scrollY, scrollYProgress } = useScroll();
   const [show, setShow] = useState(false);
+  const overSlider = useRef(false);
+
+  // step aside while the before/after slider is on screen, so it never covers the photos
+  useEffect(() => {
+    const el = document.getElementById("results");
+    if (!el) return;
+    const io = new IntersectionObserver(([e]) => {
+      overSlider.current = e.isIntersecting;
+      if (e.isIntersecting) setShow(false);
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (y) => {
-    const next = y > window.innerHeight * 0.8 && scrollYProgress.get() < 0.93;
+    const next = y > window.innerHeight * 0.8 && scrollYProgress.get() < 0.93 && !overSlider.current;
     if (next !== show) setShow(next);
   });
 

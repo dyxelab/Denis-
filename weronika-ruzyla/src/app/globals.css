@@ -150,3 +150,6 @@ body {
   html { scroll-behavior: auto; }
   .shine::after, .pulse-dot { animation: none; }
 }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

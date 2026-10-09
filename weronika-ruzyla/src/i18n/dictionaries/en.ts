@@ -11,6 +11,7 @@ const en = {
     about: "About me",
     works: "My works",
     treatments: "Treatments",
+    results: "Before & after",
     equipment: "My equipment",
     dermalux: "Dermalux Flex MD",
     academy: "My academy",
@@ -62,6 +63,15 @@ const en = {
       { title: "Home-care plan", text: "Product recommendations that extend the results of your treatments at home." },
     ],
     cta: "Book a consultation",
+  },
+  results: {
+    eyebrow: "Results",
+    title: "Before & after",
+    text: "Real results from my clients' treatments. Drag the slider to compare the skin before and after.",
+    before: "Before",
+    after: "After",
+    hint: "Drag to compare",
+    items: ["Scalp", "Arm", "Around the mouth", "Acne-prone skin", "Redness"],
   },
   dermalux: {
     eyebrow: "Dermalux Flex MD",
