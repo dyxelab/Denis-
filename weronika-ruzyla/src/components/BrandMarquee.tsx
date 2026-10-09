@@ -6,7 +6,7 @@ export default function BrandMarquee({ label }: { label: string }) {
   return (
     <section
       aria-label={label}
-      className="relative overflow-hidden border-y border-white/25 bg-white/[0.06] py-1.5 backdrop-blur-sm md:py-2"
+      className="relative overflow-hidden border-y border-white/25 bg-white/[0.06] py-1 backdrop-blur-sm md:py-1.5"
     >
       <p className="sr-only">{site.brands.join(", ")}</p>
       <div className="[mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]" aria-hidden="true">
@@ -16,7 +16,7 @@ export default function BrandMarquee({ label }: { label: string }) {
               {row.map((brand, i) => (
                 <span
                   key={`${copy}-${i}`}
-                  className={`whitespace-nowrap px-6 text-base text-ink/80 sm:px-9 sm:text-xl ${
+                  className={`whitespace-nowrap px-5 text-sm leading-tight text-ink/80 sm:px-8 sm:text-lg ${
                     i % 2 ? "font-light tracking-[0.3em]" : "font-display tracking-[0.08em]"
                   }`}
                 >
