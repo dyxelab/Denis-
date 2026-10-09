@@ -29,7 +29,7 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 1, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl border-4 border-white/80 shadow-xl shadow-espresso/15 ${offset}`}
+            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-xl shadow-espresso/15 ${offset}`}
           >
             <Image src={img.src} alt="" fill sizes="(min-width: 640px) 14rem, 33vw" className="object-cover" />
           </motion.div>

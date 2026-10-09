@@ -59,7 +59,7 @@ export default function Header({ lang, dict }: Props) {
       >
         <div
           className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border px-3 py-0.5 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
-            dark ? "border-white/25 bg-white/10 text-ivory" : "border-white/50 bg-white/25 text-espresso"
+            dark ? "border-white/25 bg-white/10 text-ivory" : "border-white/40 bg-white/15 text-espresso"
           }`}
         >
           <a href="#home" aria-label={site.name} className="justify-self-start transition-transform hover:scale-105">

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink, images } from "@/content/site";
-import { Eyebrow } from "./SectionHeading";
 import { ArrowRight } from "./Icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -26,10 +25,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-5 pb-20 pt-32 text-center text-ivory sm:pb-24">
-        <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: INTRO + 0.1, ease }}>
-          <Eyebrow tone="light">{t.eyebrow}</Eyebrow>
-        </motion.div>
-        <h1 className="display mt-7 text-[clamp(2rem,7.4vw,4.6rem)]">
+        <h1 className="display text-[clamp(2rem,7.4vw,4.6rem)]">
           {[t.titleA, t.titleB].map((line, i) => (
             <span key={i} className="block overflow-hidden pb-[0.08em]">
               <motion.span

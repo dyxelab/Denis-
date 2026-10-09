@@ -102,7 +102,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
           {rows.map(({ icon: Icon, label, value, href }) => {
             const body = (
               <>
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white/80 text-rose transition-colors duration-500 group-hover:bg-rose group-hover:text-ivory">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ivory/45 text-rose transition-colors duration-500 group-hover:bg-rose group-hover:text-ivory">
                   <Icon className="h-5 w-5" />
                 </span>
                 <span className="eyebrow mt-3 text-[0.56rem] text-mocha">{label}</span>
@@ -132,7 +132,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-espresso/15 bg-white/50 text-espresso transition-all duration-500 hover:-translate-y-1 hover:border-rose hover:bg-rose hover:text-ivory"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-espresso/15 bg-ivory/25 text-espresso transition-all duration-500 hover:-translate-y-1 hover:border-rose hover:bg-rose hover:text-ivory"
             >
               <Icon className="h-5 w-5" />
             </a>

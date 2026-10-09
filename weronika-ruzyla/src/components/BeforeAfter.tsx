@@ -47,7 +47,7 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
   const pair = results[index];
 
   return (
-    <section id="results" className="bg-ivory px-5 py-20 sm:px-8 md:py-28">
+    <section id="results" className="bg-sand px-5 py-20 sm:px-8 md:py-28">
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
       <Reveal delay={0.1}>
         <p className="mx-auto mt-5 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>
@@ -72,7 +72,7 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
       <Reveal delay={0.15} className="mx-auto mt-8 w-full max-w-[26rem]">
         <div
           ref={frame}
-          className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[2rem] border-[5px] border-white shadow-2xl shadow-espresso/20"
+          className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[2rem] shadow-2xl shadow-espresso/20"
           onPointerDown={(e) => {
             dragging.current = true;
             e.currentTarget.setPointerCapture(e.pointerId);

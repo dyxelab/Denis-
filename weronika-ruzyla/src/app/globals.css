@@ -2,11 +2,11 @@
 
 :root {
   --ivory: #fbf8f3;
-  --cream: #f3ede4;
-  --sand: #ddd1bf;
-  --sand-deep: #cbbba3;
-  --taupe: #a8957a;
-  --mocha: #6e5d4c;
+  --cream: #ddcfbb;
+  --sand: #cfbfa6;
+  --sand-deep: #b9a68a;
+  --taupe: #8a7760;
+  --mocha: #574738;
   --espresso: #2b2420;
   --ink: #171310;
   --rose: #d77f98;
@@ -70,9 +70,9 @@ body {
 
   /* glass look without backdrop-filter, so it costs nothing while scrolling */
   .glass-card {
-    background: linear-gradient(140deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.22));
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    box-shadow: 0 18px 40px -22px rgba(43, 36, 32, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    background: linear-gradient(140deg, rgba(255, 250, 242, 0.42), rgba(255, 250, 242, 0.12));
+    border: 1px solid rgba(255, 250, 242, 0.45);
+    box-shadow: 0 18px 40px -22px rgba(43, 36, 32, 0.4), inset 0 1px 0 rgba(255, 250, 242, 0.55);
   }
   .glass-dark {
     background: linear-gradient(140deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
@@ -91,9 +91,9 @@ body {
   .blooms {
     background-color: var(--cream);
     background-image:
-      radial-gradient(40rem 26rem at 12% 18%, rgba(241, 205, 215, 0.75), transparent 60%),
-      radial-gradient(36rem 26rem at 88% 78%, rgba(203, 187, 163, 0.75), transparent 60%),
-      radial-gradient(30rem 20rem at 70% 10%, rgba(255, 255, 255, 0.9), transparent 60%);
+      radial-gradient(40rem 26rem at 12% 18%, rgba(214, 160, 176, 0.45), transparent 60%),
+      radial-gradient(36rem 26rem at 88% 78%, rgba(185, 166, 138, 0.7), transparent 60%),
+      radial-gradient(30rem 20rem at 70% 10%, rgba(240, 228, 212, 0.55), transparent 60%);
   }
 
   .text-gradient {
