@@ -18,7 +18,7 @@ export default function Works({ dict }: { dict: Dictionary["works"] }) {
 
       <div className="mt-8 flex flex-col gap-3 sm:gap-4">
         {rows.map((row, r) => (
-          <div key={r} className="overflow-hidden py-2">
+          <div key={r} className="-my-5 overflow-hidden py-6">
             <div
               className={`marquee-track flex w-max hover:[animation-play-state:paused] ${r === 1 ? "marquee-reverse" : ""}`}
               style={{ animationDuration: r === 0 ? "48s" : "56s" }}
