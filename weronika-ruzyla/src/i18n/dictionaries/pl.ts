@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 const pl: Dictionary = {
   meta: {
-    title: "Weronika Rużyła — Kosmetologia Estetyczna",
+    title: "Kosmetolog Gdynia – Weronika Rużyła | Kosmetologia Estetyczna",
     description:
-      "Indywidualnie dobrane zabiegi na skórę, fototerapia LED Dermalux Flex MD, mezoterapia bezigłowa i szkolenia dla kosmetologów. Umów wizytę u Weroniki Rużyły.",
+      "Gabinet kosmetologii estetycznej w Gdyni (ul. Władysława IV 1): indywidualnie dobrane zabiegi na twarz, fototerapia LED Dermalux Flex MD i mezoterapia bezigłowa. Umów wizytę przez Booksy.",
   },
   intro: "Kosmetologia estetyczna",
   menu: { open: "Menu", close: "Zamknij", language: "Język" },

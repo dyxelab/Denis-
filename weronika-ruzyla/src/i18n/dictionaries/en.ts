@@ -1,8 +1,8 @@
 const en = {
   meta: {
-    title: "Weronika Rużyła — Aesthetic Cosmetology",
+    title: "Aesthetic Cosmetologist in Gdynia – Weronika Rużyła",
     description:
-      "Personalised skin treatments, Dermalux Flex MD LED phototherapy, needle-free mesotherapy and training for cosmetologists. Book your visit with Weronika Rużyła.",
+      "Aesthetic cosmetology studio in Gdynia, Poland (Władysława IV 1): personalised facial treatments, Dermalux Flex MD LED phototherapy and needle-free mesotherapy. Book your visit on Booksy.",
   },
   intro: "Aesthetic cosmetology",
   menu: { open: "Menu", close: "Close", language: "Language" },

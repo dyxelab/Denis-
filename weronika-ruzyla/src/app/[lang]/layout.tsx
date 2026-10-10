@@ -30,14 +30,24 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     title: dict.meta.title,
     description: dict.meta.description,
     alternates: {
-      canonical: `/${lang}`,
-      languages: Object.fromEntries(locales.map((l) => [localeLabels[l].htmlLang, `/${l}`])),
+      canonical: `/${lang}/`,
+      languages: {
+        ...Object.fromEntries(locales.map((l) => [localeLabels[l].htmlLang, `/${l}/`])),
+        "x-default": "/pl/",
+      },
     },
+    icons: {
+      icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/icon-192.png", type: "image/png", sizes: "192x192" }],
+      apple: "/apple-touch-icon.png",
+    },
+    twitter: { card: "summary_large_image", title: dict.meta.title, description: dict.meta.description, images: [images.hero.src] },
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
       locale: localeLabels[lang].og,
       type: "website",
+      siteName: site.name,
+      url: `/${lang}/`,
       images: [{ url: images.hero.src, width: images.hero.width, height: images.hero.height }],
     },
   };

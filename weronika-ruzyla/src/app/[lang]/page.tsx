@@ -13,6 +13,7 @@ import Dermalux from "@/components/Dermalux";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
+import StructuredData from "@/components/StructuredData";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -21,6 +22,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      <StructuredData lang={lang} description={dict.meta.description} />
       <Intro label={dict.intro} />
       <Header lang={lang} dict={dict} />
       <main>

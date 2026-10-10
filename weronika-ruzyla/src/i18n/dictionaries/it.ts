@@ -2,9 +2,9 @@ import type { Dictionary } from "./en";
 
 const it: Dictionary = {
   meta: {
-    title: "Weronika Rużyła — Cosmetologia Estetica",
+    title: "Cosmetologa estetica a Gdynia – Weronika Rużyła",
     description:
-      "Trattamenti personalizzati per la pelle, fototerapia LED Dermalux Flex MD, mesoterapia senza aghi e formazione per cosmetologhe. Prenota il tuo appuntamento con Weronika Rużyła.",
+      "Studio di cosmetologia estetica a Gdynia, Polonia (Władysława IV 1): trattamenti viso personalizzati, fototerapia LED Dermalux Flex MD e mesoterapia senza aghi. Prenota su Booksy.",
   },
   intro: "Cosmetologia estetica",
   menu: { open: "Menu", close: "Chiudi", language: "Lingua" },
