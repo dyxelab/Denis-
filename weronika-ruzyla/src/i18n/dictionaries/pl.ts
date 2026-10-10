@@ -124,6 +124,23 @@ const pl: Dictionary = {
     hoursValue: "Po umówieniu wizyty",
     address: "Adres",
   },
+  privacy: {
+    link: "Prywatność i cookies",
+    title: "Polityka prywatności i cookies",
+    updated: "Ostatnia aktualizacja: październik 2026",
+    close: "Zamknij",
+    sections: [
+      { h: "Administrator danych", p: "Administratorem Twoich danych osobowych jest Weronika Rużyła – Kosmetologia Estetyczna, ul. Władysława IV 1, 81-353 Gdynia, tel. +48 505 933 520. W sprawach dotyczących prywatności możesz skontaktować się z nami telefonicznie lub przez kanały kontaktowe podane na stronie." },
+      { h: "Jakie dane zbiera strona", p: "Strona nie zawiera formularzy kontaktowych, kont użytkowników ani newslettera. Podczas wizyty nasz dostawca hostingu (Netlify, Inc.) automatycznie przetwarza w logach serwera dane techniczne, takie jak adres IP, rodzaj przeglądarki oraz data i godzina wizyty, w celu udostępnienia strony i zapewnienia jej bezpieczeństwa. Podstawą prawną jest nasz prawnie uzasadniony interes (art. 6 ust. 1 lit. f RODO)." },
+      { h: "Pliki cookies i pamięć przeglądarki", p: "Nie używamy plików cookies reklamowych, analitycznych ani profilujących. Strona zapisuje jedynie wybrany język (cookie NEXT_LOCALE, ważne rok) oraz, na czas bieżącej sesji, informację, że animacja powitalna została już wyświetlona. Są one niezbędne do działania funkcji, z których korzystasz, i nie wymagają zgody. Czcionki, zdjęcia i filmy są ładowane z naszej strony, bez usług podmiotów trzecich." },
+      { h: "Kontakt, rezerwacje i media społecznościowe", p: "Jeśli dzwonisz, piszesz na WhatsApp, rezerwujesz przez Booksy lub kontaktujesz się z nami na Instagramie albo Facebooku, przetwarzamy podane przez Ciebie dane (np. imię, numer telefonu, treść wiadomości), aby odpowiedzieć i umówić wizytę (art. 6 ust. 1 lit. b i f RODO). Podanie danych jest dobrowolne, ale niezbędne do umówienia wizyty. Usługi te prowadzą ich dostawcy (WhatsApp/Meta, Booksy), których polityki prywatności mają zastosowanie. Linki do nich otwierają zewnętrzne strony." },
+      { h: "Zdjęcia przed i po", p: "Zdjęcia efektów zabiegów publikujemy wyłącznie za pisemną zgodą osoby, której dotyczą (art. 6 ust. 1 lit. a RODO). Zgodę można w każdej chwili wycofać – zdjęcia zostaną wtedy usunięte ze strony." },
+      { h: "Odbiorcy i przekazywanie danych poza UE", p: "Dane mogą być przetwarzane przez naszego dostawcę hostingu Netlify, Inc. (USA). Przekazanie odbywa się na podstawie programu EU–US Data Privacy Framework lub standardowych klauzul umownych zatwierdzonych przez Komisję Europejską. Nie sprzedajemy Twoich danych ani nie udostępniamy ich w celach marketingowych." },
+      { h: "Okres przechowywania", p: "Logi serwera są przechowywane przez dostawcę hostingu przez krótki okres niezbędny dla bezpieczeństwa. Dane z kontaktów i rezerwacji przechowujemy tak długo, jak jest to potrzebne do wykonania usługi i wypełnienia obowiązków prawnych (np. podatkowych i rachunkowych), a następnie je usuwamy." },
+      { h: "Twoje prawa", p: "Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia danych, wniesienia sprzeciwu wobec przetwarzania opartego na prawnie uzasadnionym interesie oraz wycofania zgody w dowolnym momencie, bez wpływu na zgodność z prawem wcześniejszego przetwarzania. Przysługuje Ci także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych (ul. Stawki 2, 00-193 Warszawa, uodo.gov.pl)." },
+      { h: "Zmiany", p: "Możemy aktualizować tę politykę w razie zmian na stronie lub w przepisach. Aktualna wersja jest zawsze dostępna tutaj." },
+    ],
+  },
   footer: {
     quote: "Twoje piękno jest dziełem sztuki, my jesteśmy jedynie lustrem, które je odsłania",
     sub: "Łączymy naukę o kosmetologii z rytuałami wellness, abyś mogła lśnić każdego dnia",

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { images, site } from "@/content/site";
 import Monogram from "./Monogram";
+import PrivacyModal from "./PrivacyModal";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
 
 export default function Footer({ dict }: { dict: Dictionary }) {
@@ -93,6 +94,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           <p className="eyebrow mt-3 text-[0.6rem] text-sand/70">
             {f.createdBy} <span className="text-ivory">{site.credit.name}</span> | <span className="text-ivory">{site.credit.studio}</span>
           </p>
+          <PrivacyModal dict={dict.privacy} />
         </div>
       </div>
     </footer>

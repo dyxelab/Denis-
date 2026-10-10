@@ -8,15 +8,13 @@ export const site = {
   phone: "+48 505 933 520",
   phoneHref: "tel:+48505933520",
   whatsappNumber: "48505933520",
-  // TODO: replace with the real profiles
-  instagram: "https://www.instagram.com/",
-  facebook: "https://www.facebook.com/",
-  // TODO: set a booking platform URL (e.g. Booksy). When empty, "Book now" opens WhatsApp.
-  bookingUrl: "",
-  // TODO: studio address. When empty, the address row and map link are hidden.
-  address: "",
+  instagram: "https://www.instagram.com/kosmetologia_weronikaruzyla/",
+  facebook: "https://www.facebook.com/weronikaruzyla/",
+  // "Book now" opens Booksy; when empty it falls back to WhatsApp.
+  bookingUrl: "https://booksy.com/pl-pl/233153_kosmetologia-estetyczna-weronika-ruzyla_salon-kosmetyczny_21029_gdynia",
+  address: "Władysława IV 1, 81-353 Gdynia",
   url: "https://weronikaruzyla.com",
-  credit: { name: "Tomasino Denis", studio: "DNX Visuals" },
+  credit: { name: "Tomasino Denis", studio: "DYXELAB Studio" },
   brands: ["GF™", "FUSION MESO", "MedEstelle", "PRO XN", "Dermalux"],
 };
 

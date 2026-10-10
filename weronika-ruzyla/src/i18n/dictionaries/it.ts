@@ -124,6 +124,23 @@ const it: Dictionary = {
     hoursValue: "Su appuntamento",
     address: "Indirizzo",
   },
+  privacy: {
+    link: "Privacy e cookie",
+    title: "Informativa privacy e cookie",
+    updated: "Ultimo aggiornamento: ottobre 2026",
+    close: "Chiudi",
+    sections: [
+      { h: "Titolare del trattamento", p: "Il titolare del trattamento dei tuoi dati personali è Weronika Rużyła – Kosmetologia Estetyczna, Władysława IV 1, 81-353 Gdynia, Polonia, tel. +48 505 933 520. Per qualsiasi questione sulla privacy puoi contattarci per telefono o tramite i canali indicati sul sito." },
+      { h: "Quali dati raccoglie il sito", p: "Il sito non ha moduli di contatto, account utente né newsletter. Durante la visita il nostro fornitore di hosting (Netlify, Inc.) tratta automaticamente nei log del server dati tecnici come indirizzo IP, tipo di browser, data e ora della visita, per fornire il sito e garantirne la sicurezza. La base giuridica è il nostro legittimo interesse (art. 6, par. 1, lett. f GDPR)." },
+      { h: "Cookie e memoria del browser", p: "Non usiamo cookie pubblicitari, statistici o di profilazione. Il sito salva solo la lingua scelta (cookie NEXT_LOCALE, valido un anno) e, per la sessione in corso, il fatto che l'animazione iniziale è già stata mostrata. Sono necessari alle funzioni che richiedi e non richiedono consenso. Font, foto e video sono caricati dal nostro sito, senza servizi di terze parti." },
+      { h: "Contatti, prenotazioni e social", p: "Se ci chiami, ci scrivi su WhatsApp, prenoti tramite Booksy o ci contatti su Instagram o Facebook, trattiamo i dati che ci fornisci (ad es. nome, numero di telefono, contenuto del messaggio) per risponderti e fissare l'appuntamento (art. 6, par. 1, lett. b e f GDPR). Il conferimento è facoltativo ma necessario per prenotare. Questi servizi sono gestiti dai rispettivi fornitori (WhatsApp/Meta, Booksy), che applicano le proprie informative. I link aprono siti esterni." },
+      { h: "Foto prima e dopo", p: "Le foto dei risultati dei trattamenti sono pubblicate solo con il consenso scritto della persona ritratta (art. 6, par. 1, lett. a GDPR). Il consenso può essere revocato in qualsiasi momento: in tal caso le foto vengono rimosse dal sito." },
+      { h: "Destinatari e trasferimenti fuori dall'UE", p: "I dati possono essere trattati dal nostro fornitore di hosting Netlify, Inc. (USA). Il trasferimento si basa sull'EU–US Data Privacy Framework e/o sulle clausole contrattuali standard approvate dalla Commissione europea. Non vendiamo i tuoi dati né li cediamo per finalità di marketing." },
+      { h: "Per quanto tempo conserviamo i dati", p: "I log del server sono conservati dal fornitore di hosting per il breve periodo necessario alla sicurezza. I dati di contatti e prenotazioni sono conservati per il tempo necessario a fornire il servizio e ad adempiere agli obblighi di legge (ad es. fiscali e contabili), poi vengono cancellati." },
+      { h: "I tuoi diritti", p: "Hai diritto di accedere ai tuoi dati, di rettificarli o cancellarli, di limitarne il trattamento, alla portabilità, di opporti al trattamento basato sul legittimo interesse e di revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente. Puoi inoltre presentare reclamo a un'autorità di controllo: in Polonia il Presidente dell'Ufficio per la protezione dei dati personali (Prezes UODO, ul. Stawki 2, 00-193 Varsavia, uodo.gov.pl), oppure l'autorità del tuo Paese di residenza." },
+      { h: "Modifiche", p: "Possiamo aggiornare questa informativa in caso di modifiche al sito o alla normativa. La versione aggiornata è sempre disponibile qui." },
+    ],
+  },
   footer: {
     quote: "La tua bellezza è un'opera d'arte, noi siamo semplicemente lo specchio che la rivela",
     sub: "Uniamo la scienza cosmetica e i rituali di benessere per aiutarti a splendere ogni giorno",
