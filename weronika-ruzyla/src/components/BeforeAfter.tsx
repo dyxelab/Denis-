@@ -47,13 +47,13 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
   const pair = results[index];
 
   return (
-    <section id="results" className="bg-sand px-5 py-20 sm:px-8 md:py-28">
+    <section id="results" className="bg-sand px-5 py-14 sm:px-8 md:py-20">
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
       <Reveal delay={0.1}>
-        <p className="mx-auto mt-5 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>
+        <p className="mx-auto mt-4 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>
       </Reveal>
 
-      <div className="no-scrollbar mx-auto mt-8 flex max-w-full justify-start gap-2 overflow-x-auto px-1 pb-1 sm:justify-center">
+      <div className="no-scrollbar mx-auto mt-6 flex max-w-full justify-start gap-2 overflow-x-auto px-1 pb-1 sm:justify-center">
         {dict.items.map((label, i) => (
           <button
             key={label}
@@ -69,7 +69,7 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
         ))}
       </div>
 
-      <Reveal delay={0.15} className="mx-auto mt-8 w-full max-w-[26rem]">
+      <Reveal delay={0.15} className="mx-auto mt-6 w-full max-w-[22rem]">
         <div
           ref={frame}
           className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[2rem] shadow-2xl shadow-espresso/20"
@@ -92,9 +92,9 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
             if (e.key === "ArrowRight") pos.set(Math.min(100, pos.get() + 5));
           }}
         >
-          <Image src={pair.after} alt={`${dict.after}: ${dict.items[index]}`} fill draggable={false} sizes="(min-width: 640px) 26rem, 90vw" className="pointer-events-none object-cover" />
+          <Image src={pair.after} alt={`${dict.after}: ${dict.items[index]}`} fill draggable={false} sizes="(min-width: 640px) 22rem, 90vw" className="pointer-events-none object-cover" />
           <motion.div className="absolute inset-0" style={{ clipPath: clip }}>
-            <Image src={pair.before} alt={`${dict.before}: ${dict.items[index]}`} fill draggable={false} sizes="(min-width: 640px) 26rem, 90vw" className="pointer-events-none object-cover" />
+            <Image src={pair.before} alt={`${dict.before}: ${dict.items[index]}`} fill draggable={false} sizes="(min-width: 640px) 22rem, 90vw" className="pointer-events-none object-cover" />
           </motion.div>
 
           <span className="eyebrow pointer-events-none absolute border border-white/30 bg-ink/45 backdrop-blur-sm left-3 top-3 rounded-full px-3 py-1.5 text-[0.55rem] text-white">{dict.before}</span>

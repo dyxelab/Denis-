@@ -56,6 +56,7 @@ body {
     font-size: 0.7rem;
     font-weight: 500;
     letter-spacing: 0.28em;
+    text-indent: 0.28em;
     text-transform: uppercase;
   }
 
@@ -144,6 +145,12 @@ body {
 }
 @keyframes marquee {
   to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Netlify injects a "Powered by Netlify" badge on free sites; keep it hidden. */
+#nl-badge-frame,
+#nl-hud-frame {
+  display: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -16,16 +16,16 @@ export default function Footer({ dict }: { dict: Dictionary }) {
       <Image src={images.portraitBw.src} alt="" fill sizes="100vw" className="object-cover object-[50%_40%] opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-10 pt-24 text-center sm:px-8 md:pt-32">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-16 text-center sm:px-8 md:pt-20">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-          <Monogram draw className="h-24 w-auto" />
+          <Monogram draw className="h-20 w-auto" />
         </motion.div>
         <motion.span
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 0.3 }}
-          className="mt-10 h-px w-32 bg-ivory/40"
+          className="mt-8 h-px w-28 bg-ivory/40"
         />
 
         <motion.blockquote
@@ -33,7 +33,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           whileInView="show"
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ staggerChildren: 0.05 }}
-          className="mt-10 text-[clamp(1.45rem,4vw,2.5rem)] font-extralight leading-snug"
+          className="mt-8 text-[clamp(1.25rem,3.4vw,2.1rem)] font-extralight leading-snug"
         >
           {words.map((w, i) => (
             <motion.span
@@ -58,7 +58,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
           {f.sub}
         </motion.p>
 
-        <p className="eyebrow mt-16 text-sand">{f.getInTouch}</p>
+        <p className="eyebrow mt-10 text-sand">{f.getInTouch}</p>
         <div className="mt-6 flex gap-4">
           {[
             { href: site.instagram, Icon: Instagram, label: "Instagram" },
@@ -76,22 +76,22 @@ export default function Footer({ dict }: { dict: Dictionary }) {
               viewport={{ once: true }}
               transition={{ type: "spring", delay: 0.2 + i * 0.1 }}
               whileHover={{ y: -4 }}
-              className="flex h-16 w-16 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 glass-dark transition-colors hover:border-rose hover:bg-rose"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-ivory/15 bg-ivory/5 glass-dark transition-colors hover:border-rose hover:bg-rose"
             >
-              <Icon className="h-6 w-6" />
+              <Icon className="h-5 w-5" />
             </motion.a>
           ))}
         </div>
 
-        <a href="#home" className="eyebrow mt-16 text-[0.6rem] text-sand/70 transition-colors hover:text-ivory">
+        <a href="#home" className="eyebrow mt-10 text-[0.58rem] text-sand/70 transition-colors hover:text-ivory">
           ↑ {f.backToTop}
         </a>
 
-        <div className="mt-10 w-full border-t border-ivory/10 pt-8 text-sm">
+        <div className="mt-8 w-full border-t border-ivory/10 pt-6 text-sm">
           <p className="font-light text-sand">
             © {new Date().getFullYear()} {site.name} <span className="mx-2 opacity-40">|</span> {f.rights}
           </p>
-          <p className="eyebrow mt-3 text-[0.6rem] text-sand/70">
+          <p className="eyebrow mt-3 whitespace-nowrap text-[0.48rem] !tracking-[0.16em] [text-indent:0.16em] text-sand/70 sm:text-[0.58rem] sm:!tracking-[0.28em] sm:[text-indent:0.28em]">
             {f.createdBy} <span className="text-ivory">{site.credit.name}</span> | <span className="text-ivory">{site.credit.studio}</span>
           </p>
           <PrivacyModal dict={dict.privacy} />

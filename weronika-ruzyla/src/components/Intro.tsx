@@ -5,18 +5,11 @@ import { useEffect, useState } from "react";
 import Monogram from "./Monogram";
 import Wordmark from "./Wordmark";
 
-const KEY = "wr-intro-seen";
-
 export default function Intro({ label }: { label: string }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    let seen = false;
-    try {
-      seen = sessionStorage.getItem(KEY) === "1";
-      sessionStorage.setItem(KEY, "1");
-    } catch {}
-    const t = setTimeout(() => setVisible(false), seen ? 0 : 2600);
+    const t = setTimeout(() => setVisible(false), 2600);
     return () => clearTimeout(t);
   }, []);
 

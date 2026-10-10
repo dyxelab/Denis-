@@ -10,7 +10,7 @@ import Wordmark from "./Wordmark";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
 
-const sections = ["home", "about", "works", "treatments", "results", "dermalux", "equipment", "academy", "find"] as const;
+const sections = ["home", "about", "works", "treatments", "results", "dermalux", "equipment", "find"] as const;
 
 type Props = { lang: Locale; dict: Dictionary };
 

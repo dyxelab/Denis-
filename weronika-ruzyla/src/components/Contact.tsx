@@ -37,20 +37,20 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="find" className="blooms px-5 py-20 sm:px-8 md:py-28">
+    <section id="find" className="blooms px-5 py-14 sm:px-8 md:py-20">
       <SectionHeading eyebrow={s.eyebrow} title={s.title} />
 
-      <div ref={chat} className="mx-auto mt-12 flex max-w-md flex-col gap-3">
+      <div ref={chat} className="mx-auto mt-8 flex max-w-sm flex-col gap-2.5">
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 20 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ duration: 0.6, ease }}
-          className="max-w-[85%] origin-bottom-left self-start rounded-[1.6rem] rounded-bl-md bg-sage px-6 py-4 text-ivory shadow-lg shadow-sage/25"
+          className="max-w-[85%] origin-bottom-left self-start rounded-[1.4rem] rounded-bl-md bg-sage px-5 py-3 text-sm text-ivory shadow-lg shadow-sage/25"
         >
           {s.question}
         </motion.div>
-        <div className="flex min-h-[4.5rem] justify-end">
+        <div className="flex min-h-[3.75rem] justify-end">
           <AnimatePresence mode="wait">
             {stage === 1 && (
               <motion.div
@@ -77,7 +77,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
                 initial={{ opacity: 0, scale: 0.85, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
-                className="glass-card max-w-[85%] origin-bottom-right self-start rounded-[1.6rem] rounded-br-md px-6 py-4 text-espresso"
+                className="glass-card max-w-[85%] origin-bottom-right self-start rounded-[1.4rem] rounded-br-md px-5 py-3 text-sm text-espresso"
               >
                 {s.answer}
               </motion.div>
@@ -88,25 +88,25 @@ export default function Contact({ dict }: { dict: Dictionary }) {
           href={whatsappLink(s.message)}
           target="_blank"
           rel="noreferrer"
-          className="shine eyebrow mt-2 flex items-center justify-center gap-3 rounded-full bg-sage px-7 py-4 text-ivory transition-transform hover:scale-[1.02]"
+          className="shine eyebrow mt-1 flex items-center justify-center gap-3 rounded-full bg-sage px-6 py-3.5 text-[0.62rem] text-ivory transition-transform hover:scale-[1.02]"
         >
           <WhatsApp className="h-5 w-5" />
           {s.whatsapp}
         </a>
       </div>
 
-      <Reveal delay={0.1} className="glass-card mx-auto mt-12 max-w-xl rounded-[2rem] px-6 py-8 text-center sm:px-10">
+      <Reveal delay={0.1} className="glass-card mx-auto mt-8 max-w-sm rounded-[1.75rem] px-5 py-6 text-center sm:px-8">
         <p className="eyebrow text-[0.62rem] text-mocha">{f.eyebrow}</p>
-        <p className="mx-auto mt-3 max-w-sm leading-relaxed text-mocha">{f.text}</p>
-        <div className="mt-7 grid gap-4 sm:grid-cols-2">
+        <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-mocha">{f.text}</p>
+        <div className="mt-5 grid gap-4">
           {rows.map(({ icon: Icon, label, value, href }) => {
             const body = (
               <>
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-ivory/45 text-rose transition-colors duration-500 group-hover:bg-rose group-hover:text-ivory">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ivory/45 text-rose transition-colors duration-500 group-hover:bg-rose group-hover:text-ivory">
                   <Icon className="h-5 w-5" />
                 </span>
-                <span className="eyebrow mt-3 text-[0.56rem] text-mocha">{label}</span>
-                <span className="mt-1 text-lg font-normal text-espresso">{value}</span>
+                <span className="eyebrow mt-2 text-[0.52rem] text-mocha">{label}</span>
+                <span className="mt-0.5 text-base font-normal text-espresso">{value}</span>
               </>
             );
             return href ? (
@@ -120,7 +120,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
             );
           })}
         </div>
-        <div className="mt-8 flex justify-center gap-3">
+        <div className="mt-6 flex justify-center gap-2.5">
           {[
             { href: site.instagram, Icon: Instagram, label: "Instagram" },
             { href: site.facebook, Icon: Facebook, label: "Facebook" },
@@ -132,7 +132,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-espresso/15 bg-ivory/25 text-espresso transition-all duration-500 hover:-translate-y-1 hover:border-rose hover:bg-rose hover:text-ivory"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-espresso/15 bg-ivory/25 text-espresso transition-all duration-500 hover:-translate-y-1 hover:border-rose hover:bg-rose hover:text-ivory"
             >
               <Icon className="h-5 w-5" />
             </a>

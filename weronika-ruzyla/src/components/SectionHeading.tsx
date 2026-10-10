@@ -20,7 +20,7 @@ const wordVariants = {
 export function Eyebrow({ children, tone = "dark" }: { children: React.ReactNode; tone?: "dark" | "light" }) {
   return (
     <span
-      className={`eyebrow inline-flex items-center rounded-full px-4 py-2 text-[0.62rem] ${
+      className={`eyebrow inline-flex items-center justify-center rounded-full px-4 py-2 text-center text-[0.6rem] ${
         tone === "dark" ? "glass-card text-mocha" : "glass-dark text-sand"
       }`}
     >
@@ -45,7 +45,7 @@ export default function SectionHeading({ eyebrow, title, tone = "dark", classNam
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "-8% 0px" }}
-        className={`display mt-6 max-w-4xl text-[clamp(1.55rem,4.2vw,3.1rem)] ${tone === "dark" ? "text-espresso" : "text-ivory"}`}
+        className={`display mt-4 max-w-3xl text-[clamp(1.35rem,3.6vw,2.5rem)] ${tone === "dark" ? "text-espresso" : "text-ivory"}`}
       >
         {words.map((word, i) => (
           <span key={i}>

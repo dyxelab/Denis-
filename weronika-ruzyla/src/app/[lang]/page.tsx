@@ -10,7 +10,6 @@ import Works from "@/components/Works";
 import Treatments from "@/components/Treatments";
 import BeforeAfter from "@/components/BeforeAfter";
 import Dermalux from "@/components/Dermalux";
-import Academy from "@/components/Academy";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
@@ -32,7 +31,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Treatments dict={dict} />
         <BeforeAfter dict={dict.results} />
         <Dermalux dict={dict.dermalux} equipment={dict.equipment} />
-        <Academy dict={dict.academy} />
         <Contact dict={dict} />
       </main>
       <Footer dict={dict} />
