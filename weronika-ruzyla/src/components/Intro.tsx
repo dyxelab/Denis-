@@ -22,7 +22,7 @@ export default function Intro({ label }: { label: string }) {
       {visible && (
         <motion.div
           key="intro"
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,#fbe4ea_0%,#efbfcc_55%,#dc98ac_100%)] text-[#5b2a3a]"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,#f6e9e0_0%,#ead3c6_55%,#d9b9a8_100%)] text-[#5a3b33]"
           exit={{ y: "-100%", transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] } }}
         >
           <Monogram draw className="h-28 w-auto text-black sm:h-36" />
@@ -38,12 +38,12 @@ export default function Intro({ label }: { label: string }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.85 }}
             transition={{ duration: 1, delay: 1.4 }}
-            className="eyebrow mt-4 text-[#7a4252]"
+            className="eyebrow mt-4 text-[#7d5a4f]"
           >
             {label}
           </motion.p>
           <motion.span
-            className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#5b2a3a]/50"
+            className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-[#5a3b33]/45"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 2.4, ease: "easeInOut" }}
