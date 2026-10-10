@@ -46,12 +46,12 @@ const it: Dictionary = {
     title: "Momenti dallo studio",
     text: "Trattamenti, buoni regalo, prodotti di cui mi fido: uno sguardo sulla quotidianità del mio studio.",
     captions: {
-      voucherGift: "Buono regalo",
-      portrait: "Sessione natalizia",
-      voucher: "Buoni WR",
-      product: "Cura MedEstelle",
-      facial: "Rituale viso",
-      hands: "Tocco e relax",
+      holidayVoucher: "Buono regalo",
+      holidayBlack: "Sessione natalizia",
+      voucherShelf: "Buoni WR",
+      voucherEnvelope: "Un buono da regalare",
+      medestelle: "Cura MedEstelle",
+      proxn: "Cura PRO XN",
     },
   },
   treatments: {

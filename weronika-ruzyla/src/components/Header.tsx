@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { site } from "@/content/site";
 import Monogram from "./Monogram";
+import Wordmark from "./Wordmark";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
 
@@ -65,8 +66,8 @@ export default function Header({ lang, dict }: Props) {
           <a href="#home" aria-label={site.name} className="justify-self-start transition-transform hover:scale-105">
             <Monogram className="h-8 w-auto sm:h-9" />
           </a>
-          <a href="#home" className="display text-center text-[0.68rem] leading-tight tracking-[0.22em] sm:text-[0.8rem]">
-            Weronika Rużyła
+          <a href="#home" className="flex justify-center" aria-label="Weronika Rużyła">
+            <Wordmark className="h-9 w-auto sm:h-10" />
           </a>
           <div className="flex items-center gap-4 justify-self-end">
             <LanguageSwitcher lang={lang} className="hidden md:flex" />

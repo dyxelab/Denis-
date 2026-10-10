@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Monogram from "./Monogram";
+import Wordmark from "./Wordmark";
 
 const KEY = "wr-intro-seen";
 
@@ -28,14 +29,14 @@ export default function Intro({ label }: { label: string }) {
           exit={{ y: "-100%", transition: { duration: 1.1, ease: [0.76, 0, 0.24, 1] } }}
         >
           <Monogram draw className="h-28 w-auto text-black sm:h-36" />
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.9, ease: "easeOut" }}
-            className="mt-8 font-logo text-4xl tracking-[0.06em] sm:text-5xl"
+            className="mt-8"
           >
-            Weronika Rużyła
-          </motion.p>
+            <Wordmark className="h-20 w-auto sm:h-24" />
+          </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.85 }}

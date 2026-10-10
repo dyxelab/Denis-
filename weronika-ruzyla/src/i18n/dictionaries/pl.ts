@@ -46,12 +46,12 @@ const pl: Dictionary = {
     title: "Chwile z gabinetu",
     text: "Zabiegi, vouchery podarunkowe, produkty, którym ufam — zajrzyj do codzienności mojego gabinetu.",
     captions: {
-      voucherGift: "Voucher podarunkowy",
-      portrait: "Świąteczna sesja",
-      voucher: "Vouchery WR",
-      product: "Pielęgnacja MedEstelle",
-      facial: "Rytuał na twarz",
-      hands: "Dotyk i relaks",
+      holidayVoucher: "Voucher podarunkowy",
+      holidayBlack: "Świąteczna sesja",
+      voucherShelf: "Vouchery WR",
+      voucherEnvelope: "Voucher w prezencie",
+      medestelle: "Pielęgnacja MedEstelle",
+      proxn: "Pielęgnacja PRO XN",
     },
   },
   treatments: {

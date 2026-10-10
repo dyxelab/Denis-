@@ -29,7 +29,7 @@ export default function About({ dict }: { dict: Dictionary["about"] }) {
           transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="relative aspect-[3/4] w-[46%] max-w-[17rem] overflow-hidden rounded-3xl shadow-2xl shadow-espresso/20"
         >
-          <Image src={images.voucherGift.src} alt="" fill sizes="(min-width: 640px) 17rem, 46vw" className="object-cover" />
+          <Image src={images.portraitBw.src} alt="" fill sizes="(min-width: 640px) 17rem, 46vw" className="object-cover" />
         </motion.div>
       </div>
 

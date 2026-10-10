@@ -15,7 +15,7 @@ npm run build && npm start
 | --- | --- |
 | Testi nelle 3 lingue | `src/i18n/dictionaries/{pl,en,it}.ts` |
 | Telefono, social, indirizzo, link di prenotazione, marchi | `src/content/site.ts` |
-| Foto | `public/images/*.jpg` (stessi nomi file; aggiornare width/height in `site.ts`) |
+| Foto e video | `public/images/`, `public/videos/` (aggiornare width/height in `site.ts`) |
 | Colori e font | `src/app/globals.css`, `src/app/[lang]/layout.tsx` |
 
 ## Lingua
@@ -24,6 +24,6 @@ npm run build && npm start
 
 ## Da completare prima della pubblicazione
 
-- Le foto in `public/images/` sono ritagli provvisori dagli screenshot del prototipo Framer: sostituirle con gli originali ad alta risoluzione.
+- Foto definitive in `public/images/`, prima/dopo in `public/images/results/`, video (MP4 + WebM, 480px, ~12s, senza audio) in `public/videos/`. Per aggiungerne: stessi formati, poi aggiornare `images`/`videos`/`results` in `src/content/site.ts`.
 - `site.ts`: link Instagram/Facebook reali, indirizzo dello studio (mostra anche il link a Google Maps), eventuale link Booksy in `bookingUrl` (altrimenti "Prenota" apre WhatsApp), dominio in `url`.
 - Rileggere i testi (chi sono, trattamenti, accademia) con la cliente.

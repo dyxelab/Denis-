@@ -1,18 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
-import { bookingLink, images } from "@/content/site";
+import { bookingLink, videos } from "@/content/site";
+import LoopVideo from "./LoopVideo";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { ArrowRight } from "./Icons";
 
-const photos = [
-  { img: images.hands, offset: "translate-y-6" },
-  { img: images.facial, offset: "" },
-  { img: images.product, offset: "translate-y-6" },
-];
+const offsets = ["translate-y-6", "", "translate-y-6"];
 
 export default function Treatments({ dict }: { dict: Dictionary }) {
   const t = dict.treatments;
@@ -22,16 +18,16 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
       <SectionHeading eyebrow={t.eyebrow} title={t.title} />
 
       <div className="mx-auto mt-12 flex max-w-2xl justify-center gap-3 sm:gap-5">
-        {photos.map(({ img, offset }, i) => (
+        {videos.map((clip, i) => (
           <motion.div
-            key={img.src}
+            key={clip.src}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 1, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-xl shadow-espresso/15 ${offset}`}
+            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-xl shadow-espresso/15 ${offsets[i]}`}
           >
-            <Image src={img.src} alt="" fill sizes="(min-width: 640px) 14rem, 33vw" className="object-cover" />
+            <LoopVideo src={clip.src} webm={clip.webm} poster={clip.poster} className="absolute inset-0 h-full w-full object-cover" />
           </motion.div>
         ))}
       </div>

@@ -12,7 +12,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
   const words = f.quote.split(" ");
   return (
     <footer data-tone="dark" className="relative overflow-hidden bg-ink text-ivory">
-      <Image src={images.hero.src} alt="" fill sizes="100vw" className="object-cover object-[50%_30%] opacity-25 grayscale" />
+      <Image src={images.portraitBw.src} alt="" fill sizes="100vw" className="object-cover object-[50%_40%] opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-10 pt-24 text-center sm:px-8 md:pt-32">

@@ -44,12 +44,12 @@ const en = {
     title: "Moments from the studio",
     text: "Treatments, gift vouchers, products I trust — a glimpse into everyday life in my studio.",
     captions: {
-      voucherGift: "Gift voucher",
-      portrait: "Holiday session",
-      voucher: "WR vouchers",
-      product: "MedEstelle care",
-      facial: "Facial ritual",
-      hands: "Touch & relax",
+      holidayVoucher: "Gift voucher",
+      holidayBlack: "Holiday session",
+      voucherShelf: "WR vouchers",
+      voucherEnvelope: "A voucher to give",
+      medestelle: "MedEstelle care",
+      proxn: "PRO XN care",
     },
   },
   treatments: {

@@ -20,7 +20,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         transition={{ duration: 2.6, delay: INTRO - 0.8, ease: "easeOut" }}
         className="absolute inset-0"
       >
-        <Image src={images.hero.src} alt="Weronika Rużyła" fill priority sizes="100vw" className="object-cover object-[50%_25%]" />
+        <Image src={images.hero.src} alt="Weronika Rużyła" fill priority sizes="100vw" className="object-cover object-[55%_30%]" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
 

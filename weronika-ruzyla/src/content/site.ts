@@ -17,7 +17,7 @@ export const site = {
   address: "",
   url: "https://weronikaruzyla.pl",
   credit: { name: "Tomasino Denis", studio: "DNX Visuals" },
-  brands: ["GF™", "FUSION MESO", "MedEstelle", "Dermalux"],
+  brands: ["GF™", "FUSION MESO", "MedEstelle", "PRO XN", "Dermalux"],
 };
 
 export const whatsappLink = (message: string) =>
@@ -37,11 +37,22 @@ export const results = [
 ];
 
 export const images = {
-  hero: { src: "/images/hero.jpg", width: 942, height: 1451 },
-  voucherGift: { src: "/images/gallery-voucher-gift.jpg", width: 538, height: 649 },
-  portrait: { src: "/images/gallery-portrait.jpg", width: 374, height: 649 },
-  voucher: { src: "/images/gallery-voucher.jpg", width: 538, height: 641 },
-  product: { src: "/images/gallery-product.jpg", width: 315, height: 641 },
-  facial: { src: "/images/treatment-facial.jpg", width: 580, height: 562 },
-  hands: { src: "/images/treatment-hands.jpg", width: 485, height: 773 },
+  hero: { src: "/images/hero.jpg", width: 1059, height: 1600 },
+  portrait: { src: "/images/portrait.jpg", width: 1179, height: 1456 },
+  portraitBw: { src: "/images/portrait-bw.jpg", width: 724, height: 844 },
+  holidayVoucher: { src: "/images/holiday-voucher.jpg", width: 1157, height: 1600 },
+  holidayBlack: { src: "/images/holiday-black.jpg", width: 1179, height: 1555 },
+  voucherShelf: { src: "/images/voucher-shelf.jpg", width: 1348, height: 1502 },
+  voucherEnvelope: { src: "/images/voucher-envelope.jpg", width: 1179, height: 1554 },
+  medestelle: { src: "/images/medestelle.jpg", width: 1148, height: 1600 },
+  proxn: { src: "/images/proxn.jpg", width: 1101, height: 1600 },
 };
+
+export const wordmark = { src: "/images/logo-name.png", width: 740, height: 320 };
+
+// short muted loops of real treatments (480px wide, ~12s)
+export const videos = [
+  { src: "/videos/ritual-massage.mp4", webm: "/videos/ritual-massage.webm", poster: "/videos/ritual-massage.jpg" },
+  { src: "/videos/facial-device.mp4", webm: "/videos/facial-device.webm", poster: "/videos/facial-device.jpg" },
+  { src: "/videos/serum-proxn.mp4", webm: "/videos/serum-proxn.webm", poster: "/videos/serum-proxn.jpg" },
+];

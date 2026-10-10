@@ -5,8 +5,8 @@ import SectionHeading from "./SectionHeading";
 
 type Key = keyof Dictionary["works"]["captions"];
 const rows: Key[][] = [
-  ["voucherGift", "portrait", "facial", "product"],
-  ["voucher", "hands", "voucherGift", "facial", "portrait"],
+  ["holidayVoucher", "voucherShelf", "medestelle"],
+  ["holidayBlack", "voucherEnvelope", "proxn"],
 ];
 
 /** Two rows of photos drifting in opposite directions, like the Framer draft; pure CSS so scrolling stays smooth. */
