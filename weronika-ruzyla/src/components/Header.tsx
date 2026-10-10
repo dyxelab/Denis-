@@ -59,15 +59,15 @@ export default function Header({ lang, dict }: Props) {
         className="fixed inset-x-0 top-0 z-40 px-3 pt-2 sm:px-6 sm:pt-2.5"
       >
         <div
-          className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center rounded-full border px-3 py-0.5 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
+          className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] h-12 items-center rounded-full border px-3 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
             dark ? "border-white/25 bg-white/10 text-ivory" : "border-white/40 bg-white/15 text-espresso"
           }`}
         >
-          <a href="#home" aria-label={site.name} className="justify-self-start transition-transform hover:scale-105">
+          <a href="#home" aria-label={site.name} className="flex items-center justify-self-start transition-transform hover:scale-105">
             <Monogram className="h-8 w-auto sm:h-9" />
           </a>
-          <a href="#home" className="flex justify-center" aria-label="Weronika Rużyła">
-            <Wordmark className="h-9 w-auto sm:h-10" />
+          <a href="#home" className="flex items-center justify-center" aria-label="Weronika Rużyła">
+            <Wordmark className="h-7 w-auto sm:h-8" />
           </a>
           <div className="flex items-center gap-4 justify-self-end">
             <LanguageSwitcher lang={lang} className="hidden md:flex" />
@@ -97,14 +97,14 @@ export default function Header({ lang, dict }: Props) {
             exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2rem)" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           >
-            <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
-              <LanguageSwitcher lang={lang} onNavigate={() => setOpen(false)} />
+            <div className="mx-auto grid w-full max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 py-3 sm:px-8">
+              <LanguageSwitcher lang={lang} onNavigate={() => setOpen(false)} className="justify-self-start" />
               <Monogram className="h-12 w-auto" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label={dict.menu.close}
-                className="relative flex h-11 w-11 items-center justify-center rounded-full border border-white/30 transition-transform duration-500 hover:rotate-90"
+                className="relative flex h-11 w-11 items-center justify-center justify-self-end rounded-full border border-white/30 transition-transform duration-500 hover:rotate-90"
               >
                 <span className="absolute h-px w-5 rotate-45 bg-current" />
                 <span className="absolute h-px w-5 -rotate-45 bg-current" />
@@ -121,7 +121,7 @@ export default function Header({ lang, dict }: Props) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, transition: { duration: 0.15 } }}
                   transition={{ duration: 0.6, delay: 0.25 + i * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  className="display rounded-full px-6 py-2 text-[clamp(1.15rem,4.6vw,2.1rem)] transition-colors duration-300 hover:bg-white/10 hover:text-rose-soft"
+                  className="display rounded-full px-6 py-2 text-[clamp(0.95rem,3.4vw,1.5rem)] transition-colors duration-300 hover:bg-white/10 hover:text-rose-soft"
                 >
                   {dict.nav[id]}
                 </motion.a>

@@ -6,7 +6,7 @@ export default function BrandMarquee({ label }: { label: string }) {
   return (
     <section
       aria-label={label}
-      className="relative overflow-hidden border-y border-white/25 bg-white/[0.06] py-1 backdrop-blur-sm md:py-1.5"
+      className="relative overflow-hidden border-y border-white/25 bg-white/[0.06] py-2 backdrop-blur-sm md:py-2.5"
     >
       <p className="sr-only">{site.brands.join(", ")}</p>
       <div className="[mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]" aria-hidden="true">

@@ -8,6 +8,8 @@ import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { ArrowRight } from "./Icons";
 
+// slight alternating tilt, matching the About photos
+const tilts = [-4, 2, 4];
 const offsets = ["translate-y-6", "", "translate-y-6"];
 
 export default function Treatments({ dict }: { dict: Dictionary }) {
@@ -21,8 +23,8 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
         {videos.map((clip, i) => (
           <motion.div
             key={clip.src}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 40, rotate: 0 }}
+            whileInView={{ opacity: 1, y: 0, rotate: tilts[i] }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 1, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
             className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-xl shadow-espresso/15 ${offsets[i]}`}
