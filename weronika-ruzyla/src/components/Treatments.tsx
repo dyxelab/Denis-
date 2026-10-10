@@ -27,7 +27,7 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
             whileInView={{ opacity: 1, y: 0, rotate: tilts[i] }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ duration: 1, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-xl shadow-espresso/15 ${offsets[i]}`}
+            className={`relative aspect-[3/4] w-1/3 overflow-hidden rounded-3xl shadow-[0_14px_30px_-14px_rgba(43,36,32,0.45)] ${offsets[i]}`}
           >
             <LoopVideo src={clip.src} webm={clip.webm} poster={clip.poster} className="absolute inset-0 h-full w-full object-cover" />
           </motion.div>

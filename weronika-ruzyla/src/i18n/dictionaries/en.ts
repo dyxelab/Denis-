@@ -120,6 +120,8 @@ const en = {
     social: "Social media",
     hours: "Opening hours",
     hoursValue: "By appointment",
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    closed: "Closed",
     address: "Address",
   },
   privacy: {

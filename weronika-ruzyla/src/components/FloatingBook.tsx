@@ -39,7 +39,7 @@ export default function FloatingBook({ dict }: { dict: Dictionary }) {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 26 }}
-          className="shine eyebrow fixed inset-x-5 bottom-5 z-30 rounded-full bg-espresso py-4 text-center text-ivory shadow-2xl shadow-ink/30 md:hidden"
+          className="shine eyebrow fixed inset-x-5 bottom-5 z-30 rounded-full border border-white/30 bg-espresso/40 py-3.5 text-center text-ivory shadow-[0_12px_30px_-12px_rgba(23,19,16,0.6)] backdrop-blur-md md:hidden"
         >
           {dict.hero.cta}
         </motion.a>

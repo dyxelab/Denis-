@@ -13,6 +13,8 @@ export const site = {
   // "Book now" opens Booksy; when empty it falls back to WhatsApp.
   bookingUrl: "https://booksy.com/pl-pl/233153_kosmetologia-estetyczna-weronika-ruzyla_salon-kosmetyczny_21029_gdynia",
   address: "Władysława IV 1, 81-353 Gdynia",
+  // opening hours, Monday → Sunday (null = closed)
+  hours: ["09–19", "09–19", "09–19", "09–20", "09–17", "09–20", null] as (string | null)[],
   url: "https://weronikaruzyla.com",
   credit: { name: "Tomasino Denis", studio: "DYXELAB Studio" },
   brands: ["GF™", "FUSION MESO", "MedEstelle", "PRO XN", "Dermalux"],

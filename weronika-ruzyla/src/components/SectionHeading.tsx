@@ -20,7 +20,7 @@ const wordVariants = {
 export function Eyebrow({ children, tone = "dark" }: { children: React.ReactNode; tone?: "dark" | "light" }) {
   return (
     <span
-      className={`eyebrow inline-flex items-center justify-center rounded-full px-4 py-2 text-center text-[0.6rem] ${
+      className={`eyebrow inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[0.5rem] ${
         tone === "dark" ? "glass-card text-mocha" : "glass-dark text-sand"
       }`}
     >

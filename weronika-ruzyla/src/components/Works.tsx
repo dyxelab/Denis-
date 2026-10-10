@@ -18,7 +18,7 @@ export default function Works({ dict }: { dict: Dictionary["works"] }) {
 
       <div className="mt-8 flex flex-col gap-3 sm:gap-4">
         {rows.map((row, r) => (
-          <div key={r} className="overflow-hidden">
+          <div key={r} className="overflow-hidden py-2">
             <div
               className={`marquee-track flex w-max hover:[animation-play-state:paused] ${r === 1 ? "marquee-reverse" : ""}`}
               style={{ animationDuration: r === 0 ? "48s" : "56s" }}
@@ -30,7 +30,7 @@ export default function Works({ dict }: { dict: Dictionary["works"] }) {
                     return (
                       <div
                         key={`${copy}-${i}`}
-                        className="relative h-[170px] shrink-0 overflow-hidden rounded-2xl sm:h-[260px]"
+                        className="relative h-[170px] shrink-0 overflow-hidden rounded-2xl shadow-[0_10px_22px_-12px_rgba(43,36,32,0.45)] sm:h-[260px]"
                         style={{ aspectRatio: `${img.width} / ${img.height}` }}
                       >
                         <Image

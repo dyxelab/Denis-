@@ -9,6 +9,10 @@ export default function Intro({ label }: { label: string }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
+    // a refresh always starts at the top, like a first visit
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    window.scrollTo(0, 0);
     const t = setTimeout(() => setVisible(false), 2600);
     return () => clearTimeout(t);
   }, []);

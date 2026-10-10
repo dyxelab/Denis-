@@ -2,11 +2,11 @@
 
 :root {
   --ivory: #fbf8f3;
-  --cream: #d3c4ae;
-  --sand: #c6b59b;
-  --sand-deep: #af9b7f;
-  --taupe: #7c6a55;
-  --mocha: #4d3e31;
+  --cream: #cab9a1;
+  --sand: #bdab8f;
+  --sand-deep: #a69174;
+  --taupe: #72614d;
+  --mocha: #45372b;
   --espresso: #2b2420;
   --ink: #171310;
   --rose: #d77f98;
@@ -43,6 +43,11 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-weight: 300;
   overflow-x: clip;
+}
+
+/* no lonely last words at the end of paragraphs */
+p {
+  text-wrap: pretty;
 }
 
 ::selection {

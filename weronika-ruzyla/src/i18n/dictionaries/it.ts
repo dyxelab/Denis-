@@ -122,6 +122,8 @@ const it: Dictionary = {
     social: "Social",
     hours: "Orari",
     hoursValue: "Su appuntamento",
+    days: ["Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato", "Domenica"],
+    closed: "Chiuso",
     address: "Indirizzo",
   },
   privacy: {

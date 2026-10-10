@@ -53,7 +53,7 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
         <p className="mx-auto mt-4 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>
       </Reveal>
 
-      <div className="no-scrollbar mx-auto mt-6 flex max-w-full justify-start gap-2 overflow-x-auto px-1 pb-1 sm:justify-center">
+      <div className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2">
         {dict.items.map((label, i) => (
           <button
             key={label}
@@ -72,7 +72,7 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
       <Reveal delay={0.15} className="mx-auto mt-6 w-full max-w-[22rem]">
         <div
           ref={frame}
-          className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[2rem] shadow-2xl shadow-espresso/20"
+          className="relative aspect-[3/4] cursor-ew-resize touch-pan-y select-none overflow-hidden rounded-[2rem] shadow-[0_14px_30px_-14px_rgba(43,36,32,0.45)]"
           onPointerDown={(e) => {
             dragging.current = true;
             e.currentTarget.setPointerCapture(e.pointerId);

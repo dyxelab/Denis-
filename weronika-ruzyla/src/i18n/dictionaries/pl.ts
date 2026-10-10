@@ -122,6 +122,8 @@ const pl: Dictionary = {
     social: "Social media",
     hours: "Godziny otwarcia",
     hoursValue: "Po umówieniu wizyty",
+    days: ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"],
+    closed: "Nieczynne",
     address: "Adres",
   },
   privacy: {

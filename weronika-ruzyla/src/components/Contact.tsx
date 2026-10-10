@@ -17,10 +17,14 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   const chat = useRef<HTMLDivElement>(null);
   const inView = useInView(chat, { once: true, margin: "-10% 0px" });
   const [stage, setStage] = useState(0); // 0 idle, 1 typing, 2 answered
+  const [today, setToday] = useState(-1); // highlight today's hours, set on the client only
 
   useEffect(() => {
     if (!inView) return;
-    const a = setTimeout(() => setStage(1), 600);
+    const a = setTimeout(() => {
+      setStage(1);
+      setToday((new Date().getDay() + 6) % 7);
+    }, 600);
     const b = setTimeout(() => setStage(2), 1800);
     return () => {
       clearTimeout(a);
@@ -30,7 +34,6 @@ export default function Contact({ dict }: { dict: Dictionary }) {
 
   const rows = [
     { icon: Phone, label: f.phone, value: site.phone, href: site.phoneHref },
-    { icon: Clock, label: f.hours, value: f.hoursValue },
     ...(site.address
       ? [{ icon: MapPin, label: f.address, value: site.address, href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.address)}` }]
       : []),
@@ -97,7 +100,6 @@ export default function Contact({ dict }: { dict: Dictionary }) {
 
       <Reveal delay={0.1} className="glass-card mx-auto mt-8 max-w-sm rounded-[1.75rem] px-5 py-6 text-center sm:px-8">
         <p className="eyebrow text-[0.62rem] text-mocha">{f.eyebrow}</p>
-        <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-mocha">{f.text}</p>
         <div className="mt-5 grid gap-4">
           {rows.map(({ icon: Icon, label, value, href }) => {
             const body = (
@@ -119,6 +121,23 @@ export default function Contact({ dict }: { dict: Dictionary }) {
               </div>
             );
           })}
+        </div>
+        <div className="mx-auto mt-6 max-w-[15rem] border-t border-espresso/10 pt-5">
+          <p className="eyebrow flex items-center justify-center gap-2 text-[0.52rem] text-mocha">
+            <Clock className="h-4 w-4 text-rose" />
+            {f.hours}
+          </p>
+          <ul className="mt-3 space-y-1.5 text-sm">
+            {f.days.map((day, i) => (
+              <li
+                key={day}
+                className={`flex justify-between gap-4 rounded-full px-3 py-0.5 ${today === i ? "bg-ivory/45 font-normal text-espresso" : "text-mocha"}`}
+              >
+                <span>{day}</span>
+                <span className="tabular-nums">{site.hours[i] ?? f.closed}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="mt-6 flex justify-center gap-2.5">
           {[

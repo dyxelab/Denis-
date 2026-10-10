@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
@@ -15,16 +15,8 @@ const sections = ["home", "about", "works", "treatments", "results", "dermalux",
 type Props = { lang: Locale; dict: Dictionary };
 
 export default function Header({ lang, dict }: Props) {
-  const { scrollY } = useScroll();
   const [dark, setDark] = useState(true); // is the section under the header dark?
-  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
-
-  useMotionValueEvent(scrollY, "change", (y) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    if (y > 400 && y > prev + 4 && !hidden) setHidden(true);
-    else if (y < prev - 4 && hidden) setHidden(false);
-  });
 
   // watch only the thin band behind the header: dark sections switch it to light text
   useEffect(() => {
@@ -54,7 +46,7 @@ export default function Header({ lang, dict }: Props) {
     <>
       <motion.header
         initial={{ y: -100 }}
-        animate={{ y: hidden && !open ? -110 : 0 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="fixed inset-x-0 top-0 z-40 px-3 pt-2 sm:px-6 sm:pt-2.5"
       >

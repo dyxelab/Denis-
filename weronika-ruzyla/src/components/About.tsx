@@ -18,7 +18,7 @@ export default function About({ dict }: { dict: Dictionary["about"] }) {
           whileInView={{ opacity: 1, y: 0, rotate: -3 }}
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-          className="relative aspect-[3/4] w-[44%] max-w-[14rem] overflow-hidden rounded-3xl shadow-2xl shadow-espresso/20"
+          className="relative aspect-[3/4] w-[44%] max-w-[14rem] overflow-hidden rounded-3xl shadow-[0_14px_30px_-14px_rgba(43,36,32,0.45)]"
         >
           <Image src={images.portrait.src} alt="Weronika Rużyła" fill sizes="(min-width: 640px) 17rem, 46vw" className="object-cover" />
         </motion.div>
@@ -27,7 +27,7 @@ export default function About({ dict }: { dict: Dictionary["about"] }) {
           whileInView={{ opacity: 1, y: -24, rotate: 3 }}
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ duration: 1.1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-          className="relative aspect-[3/4] w-[44%] max-w-[14rem] overflow-hidden rounded-3xl shadow-2xl shadow-espresso/20"
+          className="relative aspect-[3/4] w-[44%] max-w-[14rem] overflow-hidden rounded-3xl shadow-[0_14px_30px_-14px_rgba(43,36,32,0.45)]"
         >
           <Image src={images.portraitBw.src} alt="" fill sizes="(min-width: 640px) 17rem, 46vw" className="object-cover" />
         </motion.div>
