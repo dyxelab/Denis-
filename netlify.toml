@@ -1,0 +1,8 @@
+# Netlify: build the Weronika Rużyła site, which lives in its own folder.
+[build]
+  base = "weronika-ruzyla"
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"

@@ -15,7 +15,7 @@ export const site = {
   bookingUrl: "",
   // TODO: studio address. When empty, the address row and map link are hidden.
   address: "",
-  url: "https://weronikaruzyla.pl",
+  url: "https://weronikaruzyla.com",
   credit: { name: "Tomasino Denis", studio: "DNX Visuals" },
   brands: ["GF™", "FUSION MESO", "MedEstelle", "PRO XN", "Dermalux"],
 };
