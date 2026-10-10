@@ -5,8 +5,9 @@ Sito one-page multilingua (🇵🇱 PL · 🇬🇧 EN · 🇮🇹 IT) in Next.js
 ```bash
 cd weronika-ruzyla
 npm install
-npm run dev     # http://localhost:3000 → reindirizza a /pl, /en o /it
-npm run build && npm start
+npm run dev        # http://localhost:3000/pl/ (oppure /en/, /it/)
+npm run build      # genera il sito statico in out/
+npx serve out      # anteprima della build
 ```
 
 ## Dove modificare cosa
@@ -18,9 +19,10 @@ npm run build && npm start
 | Foto e video | `public/images/`, `public/videos/` (aggiornare width/height in `site.ts`) |
 | Colori e font | `src/app/globals.css`, `src/app/[lang]/layout.tsx` |
 
-## Lingua
+## Lingua e pubblicazione
 
-`src/proxy.ts` reindirizza `/` alla lingua del browser (o a quella scelta in precedenza, salvata nel cookie `NEXT_LOCALE`); il polacco è la lingua di default. Le tre pagine sono generate staticamente.
+Il sito è un export statico (`output: "export"`): ogni lingua è una pagina HTML già pronta in `out/pl/`, `out/en/`, `out/it/`.
+Su Netlify (`netlify.toml` nella radice del repository) la regola in `public/_redirects` manda chi apre il dominio nella lingua del browser, con il polacco come default. Ogni push sul branch di produzione aggiorna il sito.
 
 ## Da completare prima della pubblicazione
 

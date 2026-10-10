@@ -1,0 +1,5 @@
+# Netlify: send the bare domain to the visitor's language (Polish by default).
+# Language switching inside the site links straight to /pl/, /en/ or /it/.
+/  /it/  302  Language=it
+/  /en/  302  Language=en
+/  /pl/  302
