@@ -7,6 +7,7 @@ import { images, site } from "@/content/site";
 import Monogram from "./Monogram";
 import PrivacyModal from "./PrivacyModal";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
+import { Branch, Pumpkin } from "./Autumn";
 
 export default function Footer({ dict }: { dict: Dictionary }) {
   const f = dict.footer;
@@ -15,18 +16,24 @@ export default function Footer({ dict }: { dict: Dictionary }) {
     <footer data-tone="dark" className="relative overflow-hidden bg-ink text-ivory">
       <Image src={images.portraitBw.src} alt="" fill sizes="100vw" className="object-cover object-[50%_40%] opacity-30" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
+      <Branch className="pointer-events-none absolute left-0 top-0 w-28 opacity-70 sm:w-40" />
+      <Branch flip className="pointer-events-none absolute right-0 top-0 w-28 opacity-70 sm:w-40" />
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-16 text-center sm:px-8 md:pt-20">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           <Monogram draw className="h-20 w-auto" />
         </motion.div>
-        <motion.span
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 0.3 }}
-          className="mt-8 h-px w-28 bg-ivory/40"
-        />
+          className="mt-8 flex items-center gap-3"
+        >
+          <span className="h-px w-12 bg-gradient-to-r from-transparent to-ivory/40" />
+          <Pumpkin className="h-6 w-6 text-[#d0823c]" />
+          <span className="h-px w-12 bg-gradient-to-l from-transparent to-ivory/40" />
+        </motion.div>
 
         <motion.blockquote
           initial="hidden"

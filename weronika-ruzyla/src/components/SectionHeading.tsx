@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { PillPumpkin } from "./Autumn";
 
 type Props = {
   eyebrow: string;
@@ -19,12 +20,15 @@ const wordVariants = {
 /** Glass pill eyebrow with a pulsing dot. */
 export function Eyebrow({ children, tone = "dark" }: { children: React.ReactNode; tone?: "dark" | "light" }) {
   return (
-    <span
-      className={`eyebrow inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[0.5rem] ${
-        tone === "dark" ? "glass-card text-mocha" : "glass-dark text-sand"
-      }`}
-    >
-      {children}
+    <span className="relative inline-flex">
+      <PillPumpkin />
+      <span
+        className={`eyebrow relative inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[0.5rem] ${
+          tone === "dark" ? "glass-card text-mocha" : "glass-dark text-sand"
+        }`}
+      >
+        {children}
+      </span>
     </span>
   );
 }

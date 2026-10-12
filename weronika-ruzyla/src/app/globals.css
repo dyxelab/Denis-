@@ -9,8 +9,8 @@
   --mocha: #45372b;
   --espresso: #2b2420;
   --ink: #171310;
-  --rose: #d77f98;
-  --rose-soft: #f1cdd7;
+  --rose: #c26a43;
+  --rose-soft: #f1d3bd;
   --sage: #3b6b4e;
 }
 
@@ -97,9 +97,9 @@ p {
   .blooms {
     background-color: var(--cream);
     background-image:
-      radial-gradient(40rem 26rem at 12% 18%, rgba(214, 160, 176, 0.45), transparent 60%),
+      radial-gradient(40rem 26rem at 12% 18%, rgba(206, 128, 72, 0.3), transparent 60%),
       radial-gradient(36rem 26rem at 88% 78%, rgba(185, 166, 138, 0.7), transparent 60%),
-      radial-gradient(30rem 20rem at 70% 10%, rgba(240, 228, 212, 0.55), transparent 60%);
+      radial-gradient(30rem 20rem at 70% 10%, rgba(226, 170, 96, 0.32), transparent 60%);
   }
 
   .text-gradient {
@@ -165,3 +165,59 @@ p {
 
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* jack-o'-lantern eyes: a slow, candle-like flicker */
+.pumpkin-eyes {
+  filter: drop-shadow(0 0 1.5px #ffcf5a) drop-shadow(0 0 3px rgba(255, 170, 60, 0.8));
+  animation: candle 2.8s ease-in-out infinite;
+}
+@keyframes candle {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.72; }
+  55% { opacity: 0.95; }
+  70% { opacity: 0.8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pumpkin-eyes { animation: none; }
+}
+
+/* bat wings: quick downstroke, slower recovery, a short glide; the body bobs with each beat */
+.bat-wing {
+  transform-box: fill-box;
+  transform-origin: 0% 40%;
+  animation: bat-flap 0.38s infinite;
+}
+.bat-body {
+  animation: bat-bob 0.38s infinite;
+}
+@keyframes bat-flap {
+  0% { transform: rotate(-30deg) scaleY(0.9); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+  32% { transform: rotate(26deg) scaleY(0.62); animation-timing-function: cubic-bezier(0.2, 0.4, 0.5, 1); }
+  78% { transform: rotate(-26deg) scaleY(0.95); }
+  100% { transform: rotate(-30deg) scaleY(0.9); }
+}
+@keyframes bat-bob {
+  0%, 100% { transform: translateY(0.6px); }
+  32% { transform: translateY(-1.2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bat-wing, .bat-body { animation: none; }
+}
+
+/* loading-screen logo: the faintest orange neon glow, flickering like an old sign */
+.neon-flicker {
+  animation: neon 3.2s linear infinite;
+}
+@keyframes neon {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(255, 140, 50, 0.45)) drop-shadow(0 0 10px rgba(255, 120, 40, 0.25)); }
+  8% { filter: drop-shadow(0 0 2px rgba(255, 140, 50, 0.2)) drop-shadow(0 0 4px rgba(255, 120, 40, 0.08)); }
+  10% { filter: drop-shadow(0 0 3px rgba(255, 140, 50, 0.45)) drop-shadow(0 0 10px rgba(255, 120, 40, 0.25)); }
+  47% { filter: drop-shadow(0 0 4px rgba(255, 140, 50, 0.5)) drop-shadow(0 0 12px rgba(255, 120, 40, 0.3)); }
+  50% { filter: drop-shadow(0 0 1px rgba(255, 140, 50, 0.12)) drop-shadow(0 0 3px rgba(255, 120, 40, 0.05)); }
+  52% { filter: drop-shadow(0 0 4px rgba(255, 140, 50, 0.5)) drop-shadow(0 0 12px rgba(255, 120, 40, 0.3)); }
+  54% { filter: drop-shadow(0 0 2px rgba(255, 140, 50, 0.22)) drop-shadow(0 0 5px rgba(255, 120, 40, 0.1)); }
+  57% { filter: drop-shadow(0 0 3px rgba(255, 140, 50, 0.45)) drop-shadow(0 0 10px rgba(255, 120, 40, 0.25)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .neon-flicker { animation: none; filter: drop-shadow(0 0 3px rgba(255, 140, 50, 0.4)); }
+}

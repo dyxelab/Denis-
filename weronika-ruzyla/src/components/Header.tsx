@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { site } from "@/content/site";
 import Monogram from "./Monogram";
+import { HeaderPumpkin } from "./Autumn";
 import Wordmark from "./Wordmark";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
@@ -51,10 +52,11 @@ export default function Header({ lang, dict }: Props) {
         className="fixed inset-x-0 top-0 z-40 px-3 pt-2 sm:px-6 sm:pt-2.5"
       >
         <div
-          className={`mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] h-12 items-center rounded-full border px-3 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
+          className={`mx-auto grid max-w-6xl relative grid-cols-[1fr_auto_1fr] h-12 items-center rounded-full border px-3 backdrop-blur-lg transition-colors duration-500 sm:px-5 ${
             dark ? "border-white/25 bg-white/10 text-ivory" : "border-white/40 bg-white/15 text-espresso"
           }`}
         >
+          <HeaderPumpkin />
           <a href="#home" aria-label={site.name} className="flex items-center justify-self-start transition-transform hover:scale-105">
             <Monogram className="h-8 w-auto sm:h-9" />
           </a>

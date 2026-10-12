@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink, images } from "@/content/site";
 import { ArrowRight } from "./Icons";
+import { Bats } from "./Autumn";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const INTRO = 2.2; // wait for the intro curtain before revealing the hero
@@ -23,6 +24,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         <Image src={images.hero.src} alt="Weronika Rużyła" fill priority sizes="100vw" className="object-cover object-[55%_30%]" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
+      <Bats />
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-5 pb-20 pt-32 text-center text-ivory sm:pb-24">
         <h1 className="display text-[clamp(2rem,7.4vw,4.6rem)]">
