@@ -7,6 +7,7 @@ import LoopVideo from "./LoopVideo";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { ArrowRight } from "./Icons";
+import EdgeFade from "./EdgeFade";
 
 // slight alternating tilt, matching the About photos
 const tilts = [-4, 2, 4];
@@ -16,7 +17,8 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
   const t = dict.treatments;
 
   return (
-    <section id="treatments" className="blooms px-5 py-14 sm:px-8 md:py-20">
+    <section id="treatments" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
+      <EdgeFade color="#bdab8f" />
       <SectionHeading eyebrow={t.eyebrow} title={t.title} />
 
       <div className="mx-auto mt-8 flex max-w-xl justify-center gap-3 sm:gap-5">

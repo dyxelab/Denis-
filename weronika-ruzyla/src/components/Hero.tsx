@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import EdgeFade from "./EdgeFade";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink, images } from "@/content/site";
@@ -69,6 +70,8 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           </a>
         </motion.div>
       </div>
+
+      <EdgeFade color="#cab9a1" className="h-14 sm:h-16" />
 
       <motion.a
         href="#about"

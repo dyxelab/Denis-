@@ -7,6 +7,7 @@ import { site, whatsappLink } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 import { Clock, Facebook, Instagram, MapPin, Phone, WhatsApp } from "./Icons";
+import EdgeFade from "./EdgeFade";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -40,7 +41,8 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="find" className="blooms px-5 py-14 sm:px-8 md:py-20">
+    <section id="find" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
+      <EdgeFade color="#171310" />
       <SectionHeading eyebrow={s.eyebrow} title={s.title} />
 
       <div ref={chat} className="mx-auto mt-8 flex max-w-sm flex-col gap-2.5">

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import EdgeFade from "./EdgeFade";
 
 const colors = ["#5b8cff", "#ff5a5f", "#c23a5a"];
 
@@ -31,6 +32,7 @@ export default function Dermalux({ dict, equipment }: Props) {
 
   return (
     <section id="dermalux" data-tone="dark" className="relative overflow-hidden bg-ink px-5 py-20 text-ivory sm:px-8 md:py-28">
+      <EdgeFade color="#cab9a1" className="z-[1] h-20 md:h-28" />
       {/* ambient light following the active wavelength: a gradient, no blur filter */}
       <motion.div
         aria-hidden="true"

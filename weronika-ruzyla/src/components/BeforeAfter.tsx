@@ -7,6 +7,7 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import { results } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import EdgeFade from "./EdgeFade";
 
 /**
  * Before/after comparison: the "before" photo is clipped over the "after" one and the
@@ -47,7 +48,8 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
   const pair = results[index];
 
   return (
-    <section id="results" className="bg-sand px-5 py-14 sm:px-8 md:py-20">
+    <section id="results" className="relative bg-sand px-5 py-14 sm:px-8 md:py-20">
+      <EdgeFade color="#171310" />
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
       <Reveal delay={0.1}>
         <p className="mx-auto mt-4 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>

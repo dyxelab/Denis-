@@ -6,10 +6,12 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import { images } from "@/content/site";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import EdgeFade from "./EdgeFade";
 
 export default function About({ dict }: { dict: Dictionary["about"] }) {
   return (
-    <section id="about" className="blooms px-5 py-14 sm:px-8 md:py-20">
+    <section id="about" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
+      <EdgeFade color="#bdab8f" />
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
 
       <div className="relative mx-auto mt-8 flex max-w-2xl items-end justify-center gap-4 sm:gap-6">

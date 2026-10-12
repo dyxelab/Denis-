@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { images } from "@/content/site";
 import SectionHeading from "./SectionHeading";
+import EdgeFade from "./EdgeFade";
 
 type Key = keyof Dictionary["works"]["captions"];
 const rows: Key[][] = [
@@ -12,7 +13,8 @@ const rows: Key[][] = [
 /** Two rows of photos drifting in opposite directions, like the Framer draft; pure CSS so scrolling stays smooth. */
 export default function Works({ dict }: { dict: Dictionary["works"] }) {
   return (
-    <section id="works" className="overflow-hidden bg-sand py-14 md:py-20">
+    <section id="works" className="relative overflow-hidden bg-sand py-14 md:py-20">
+      <EdgeFade color="#cab9a1" />
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} className="px-5" />
       <p className="mx-auto mt-4 max-w-lg px-5 text-center font-light leading-relaxed text-mocha">{dict.text}</p>
 
