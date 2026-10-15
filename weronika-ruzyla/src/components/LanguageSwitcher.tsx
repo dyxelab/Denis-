@@ -16,10 +16,7 @@ export default function LanguageSwitcher({ lang, className = "", onNavigate }: P
             hrefLang={localeLabels[l].htmlLang}
             aria-current={l === lang ? "true" : undefined}
             title={localeLabels[l].name}
-            onClick={() => {
-              document.cookie = `NEXT_LOCALE=${l}; path=/; max-age=31536000; samesite=lax`;
-              onNavigate?.();
-            }}
+            onClick={() => onNavigate?.()}
             className={`eyebrow px-1 py-1 transition-opacity ${l === lang ? "opacity-100" : "opacity-55 hover:opacity-100"}`}
           >
             {localeLabels[l].short}
