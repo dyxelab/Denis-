@@ -1,3 +1,7 @@
+# Old site: its Dermalux article now lives in the Dermalux section (permanent redirect for Google).
+/dermalux-flex-md-–-fototerapia-led-dla-zdrowej-i-promiennej-skóry  /pl/#dermalux  301
+/dermalux-flex-md-%E2%80%93-fototerapia-led-dla-zdrowej-i-promiennej-sk%C3%B3ry  /pl/#dermalux  301
+
 # Netlify: send the bare domain to the visitor's language (Polish by default).
 # Language switching inside the site links straight to /pl/, /en/ or /it/.
 /  /it/  302  Language=it
