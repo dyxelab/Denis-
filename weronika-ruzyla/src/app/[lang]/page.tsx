@@ -13,7 +13,6 @@ import Dermalux from "@/components/Dermalux";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
-import Leaves from "@/components/Leaves";
 import StructuredData from "@/components/StructuredData";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -38,7 +37,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
       <Footer dict={dict} />
       <FloatingBook dict={dict} />
-      <Leaves />
     </>
   );
 }
