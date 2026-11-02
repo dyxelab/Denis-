@@ -1,14 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import EdgeFade from "./EdgeFade";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/i18n/dictionaries/en";
 import { bookingLink, images } from "@/content/site";
 import { ArrowRight } from "./Icons";
+import EdgeFade from "./EdgeFade";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-const INTRO = 2.2; // wait for the intro curtain before revealing the hero
+const INTRO = 2.0; // wait for the intro curtain before revealing the hero
 
 export default function Hero({ dict }: { dict: Dictionary }) {
   const t = dict.hero;
@@ -21,9 +21,10 @@ export default function Hero({ dict }: { dict: Dictionary }) {
         transition={{ duration: 2.6, delay: INTRO - 0.8, ease: "easeOut" }}
         className="absolute inset-0"
       >
-        <Image src={images.hero.src} alt="Weronika Rużyła" fill priority sizes="100vw" className="object-cover object-[55%_30%]" />
+        <Image src={images.holidayVoucher.src} alt="Weronika Rużyła" fill priority sizes="100vw" className="object-cover object-[50%_25%]" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
+      <EdgeFade color="#e6d6c2" side="bottom" className="h-32 sm:h-40" />
 
       <div className="relative z-10 flex w-full max-w-3xl flex-col items-center px-5 pb-20 pt-32 text-center text-ivory sm:pb-24">
         <h1 className="display text-[clamp(2rem,7.4vw,4.6rem)]">
@@ -68,8 +69,6 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           </a>
         </motion.div>
       </div>
-
-      <EdgeFade color="#cab9a1" className="h-14 sm:h-16" />
 
       <motion.a
         href="#about"

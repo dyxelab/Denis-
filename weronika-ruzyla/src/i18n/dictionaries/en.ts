@@ -4,11 +4,12 @@ const en = {
     description:
       "Aesthetic cosmetology studio in Gdynia, Poland (Władysława IV 1): personalised facial treatments, Dermalux Flex MD LED phototherapy and needle-free mesotherapy. Book your visit on Booksy.",
   },
-  intro: "Aesthetic cosmetology",
+  intro: "Merry Christmas",
   menu: { open: "Menu", close: "Close", language: "Language" },
   nav: {
     home: "Home",
     about: "About me",
+    gift: "Christmas gift",
     works: "My works",
     treatments: "Treatments",
     results: "Before & after",
@@ -20,10 +21,10 @@ const en = {
   bookingMessage: "Hello! I would like to book an appointment.",
   hero: {
     eyebrow: "Aesthetic cosmetology",
-    titleA: "Your beauty,",
-    titleB: "in full light.",
+    titleA: "A season",
+    titleB: "full of glow.",
     subtitle:
-      "Personalised treatments, professional technology and rituals of care — in a calm space created just for you.",
+      "Treat yourself or someone you love to a moment of beauty – festive gift vouchers and treatments that make your skin radiant for every celebration.",
     cta: "Book now",
     secondary: "Discover treatments",
     scroll: "Scroll",
@@ -38,6 +39,14 @@ const en = {
       "Certified professional products",
       "Medical-grade technology",
     ],
+  },
+  xmas: {
+    greeting: "Merry Christmas and a happy New Year",
+    eyebrow: "Christmas gift",
+    title: "Give a moment of beauty",
+    text: "An elegant gift voucher for any treatment, wrapped in festive style. The perfect present for your mum, sister, best friend… or yourself.",
+    cta: "Order a voucher",
+    message: "Hello! I would like to order a Christmas gift voucher.",
   },
   works: {
     eyebrow: "Our reality",

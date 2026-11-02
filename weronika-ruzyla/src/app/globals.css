@@ -2,16 +2,21 @@
 
 :root {
   --ivory: #fbf8f3;
-  --cream: #cab9a1;
-  --sand: #bdab8f;
-  --sand-deep: #a69174;
+  --cream: #e6d6c2;
+  --sand: #d8c4aa;
+  --sand-deep: #c4ab8b;
   --taupe: #72614d;
   --mocha: #45372b;
   --espresso: #2b2420;
   --ink: #171310;
-  --rose: #d77f98;
+  --rose: #b3263a;
   --rose-soft: #f1cdd7;
-  --sage: #3b6b4e;
+  --sage: #1f5a42;
+  --wine: #6e1424;
+  --wine-deep: #3d0a14;
+  --pine: #143d30;
+  --gold: #c9a24f;
+  --gold-soft: #ead7a4;
 }
 
 @theme inline {
@@ -26,6 +31,11 @@
   --color-rose: var(--rose);
   --color-rose-soft: var(--rose-soft);
   --color-sage: var(--sage);
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
+  --color-pine: var(--pine);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-logo: var(--font-logo);
@@ -97,13 +107,13 @@ p {
   .blooms {
     background-color: var(--cream);
     background-image:
-      radial-gradient(40rem 26rem at 12% 18%, rgba(214, 160, 176, 0.45), transparent 60%),
-      radial-gradient(36rem 26rem at 88% 78%, rgba(185, 166, 138, 0.7), transparent 60%),
-      radial-gradient(30rem 20rem at 70% 10%, rgba(240, 228, 212, 0.55), transparent 60%);
+      radial-gradient(40rem 26rem at 12% 18%, rgba(179, 38, 58, 0.16), transparent 60%),
+      radial-gradient(36rem 26rem at 88% 78%, rgba(20, 61, 48, 0.16), transparent 60%),
+      radial-gradient(30rem 20rem at 70% 10%, rgba(201, 162, 79, 0.22), transparent 60%);
   }
 
   .text-gradient {
-    background: linear-gradient(100deg, var(--ivory) 10%, var(--rose-soft) 55%, var(--ivory) 90%);
+    background: linear-gradient(100deg, var(--gold-soft) 5%, #fff6dd 45%, var(--gold) 95%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -158,7 +168,21 @@ p {
   display: none !important;
 }
 
+/* Christmas: a thin gold line under every section eyebrow pill */
+.glass-card.eyebrow, .glass-dark.eyebrow { box-shadow: 0 0 0 1px rgba(201, 162, 79, 0.45), 0 10px 24px -16px rgba(110, 20, 36, 0.6); }
+
+/* Christmas lights */
+.twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 1; filter: brightness(1.15); }
+  45% { opacity: 0.3; filter: brightness(0.7); }
+  60% { opacity: 0.95; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .twinkle { animation: none; }
   html { scroll-behavior: auto; }
   .shine::after, .pulse-dot { animation: none; }
 }

@@ -17,8 +17,8 @@ export default function Treatments({ dict }: { dict: Dictionary }) {
   const t = dict.treatments;
 
   return (
-    <section id="treatments" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
-      <EdgeFade color="#bdab8f" />
+    <section id="treatments" className="blooms relative px-5 py-28 sm:px-8 md:py-32">
+      <EdgeFade color="#d8c4aa" side="bottom" />
       <SectionHeading eyebrow={t.eyebrow} title={t.title} />
 
       <div className="mx-auto mt-8 flex max-w-xl justify-center gap-3 sm:gap-5">

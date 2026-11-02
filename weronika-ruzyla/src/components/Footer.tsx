@@ -6,17 +6,20 @@ import type { Dictionary } from "@/i18n/dictionaries/en";
 import { images, site } from "@/content/site";
 import Monogram from "./Monogram";
 import PrivacyModal from "./PrivacyModal";
+import Garland from "./Garland";
 import { Facebook, Instagram, WhatsApp } from "./Icons";
 
 export default function Footer({ dict }: { dict: Dictionary }) {
   const f = dict.footer;
   const words = f.quote.split(" ");
   return (
-    <footer data-tone="dark" className="relative overflow-hidden bg-ink text-ivory">
+    <footer data-tone="dark" className="relative overflow-hidden bg-wine-deep text-ivory">
       <Image src={images.portraitBw.src} alt="" fill sizes="100vw" className="object-cover object-[50%_40%] opacity-30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
+      <div className="absolute inset-0 bg-gradient-to-b from-wine-deep/70 via-wine-deep/65 to-wine-deep" />
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-16 text-center sm:px-8 md:pt-20">
+      <Garland className="relative z-[1] mt-6 sm:mt-8" />
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pb-8 pt-10 text-center sm:px-8 md:pt-14">
+        <p className="eyebrow mb-8 text-[0.62rem] text-gold">{dict.xmas.greeting}</p>
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
           <Monogram draw className="h-20 w-auto" />
         </motion.div>

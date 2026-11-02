@@ -41,9 +41,10 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <section id="find" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
-      <EdgeFade color="#171310" />
-      <SectionHeading eyebrow={s.eyebrow} title={s.title} />
+    <section id="find" data-tone="dark" className="relative bg-[radial-gradient(ellipse_at_top,#1f5244_0%,#143d30_60%,#0c271f_100%)] px-5 py-28 text-ivory sm:px-8 md:py-32">
+      <EdgeFade color="#1a4a3c" className="h-24 sm:h-28" />
+      <EdgeFade color="#3d0a14" side="bottom" />
+      <SectionHeading eyebrow={s.eyebrow} title={s.title} tone="light" />
 
       <div ref={chat} className="mx-auto mt-8 flex max-w-sm flex-col gap-2.5">
         <motion.div
@@ -51,7 +52,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-10% 0px" }}
           transition={{ duration: 0.6, ease }}
-          className="max-w-[85%] origin-bottom-left self-start rounded-[1.4rem] rounded-bl-md bg-sage px-5 py-3 text-sm text-ivory shadow-lg shadow-sage/25"
+          className="max-w-[85%] origin-bottom-left self-start rounded-[1.4rem] rounded-bl-md bg-[#8a1d30] px-5 py-3 text-sm text-ivory shadow-lg shadow-black/25"
         >
           {s.question}
         </motion.div>
@@ -63,7 +64,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="glass-card flex h-11 items-center gap-1.5 self-start rounded-full px-4"
+                className="flex h-11 items-center gap-1.5 self-start rounded-full bg-ivory/80 px-4"
                 aria-hidden="true"
               >
                 {[0, 1, 2].map((i) => (
@@ -82,7 +83,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
                 initial={{ opacity: 0, scale: 0.85, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.6, ease }}
-                className="glass-card max-w-[85%] origin-bottom-right self-start rounded-[1.4rem] rounded-br-md px-5 py-3 text-sm text-espresso"
+                className="max-w-[85%] origin-bottom-right self-start rounded-[1.4rem] rounded-br-md bg-ivory/90 px-5 py-3 text-sm text-espresso shadow-lg shadow-black/20"
               >
                 {s.answer}
               </motion.div>
@@ -93,14 +94,14 @@ export default function Contact({ dict }: { dict: Dictionary }) {
           href={whatsappLink(s.message)}
           target="_blank"
           rel="noreferrer"
-          className="shine eyebrow mt-1 flex items-center justify-center gap-3 rounded-full bg-sage px-6 py-3.5 text-[0.62rem] text-ivory transition-transform hover:scale-[1.02]"
+          className="shine eyebrow mt-1 flex items-center justify-center gap-3 rounded-full border border-gold/50 bg-[#2f7d5b] px-6 py-3.5 text-[0.62rem] text-ivory transition-transform hover:scale-[1.02]"
         >
           <WhatsApp className="h-5 w-5" />
           {s.whatsapp}
         </a>
       </div>
 
-      <Reveal delay={0.1} className="glass-card mx-auto mt-8 max-w-sm rounded-[1.75rem] px-5 py-6 text-center sm:px-8">
+      <Reveal delay={0.1} className="mx-auto mt-8 max-w-sm rounded-[1.75rem] bg-ivory/92 px-5 py-6 text-center text-espresso shadow-[0_18px_40px_-16px_rgba(0,0,0,0.6)] ring-1 ring-gold/40 sm:px-8">
         <p className="eyebrow text-[0.62rem] text-mocha">{f.eyebrow}</p>
         <div className="mt-5 grid gap-4">
           {rows.map(({ icon: Icon, label, value, href }) => {
@@ -133,7 +134,7 @@ export default function Contact({ dict }: { dict: Dictionary }) {
             {f.days.map((day, i) => (
               <li
                 key={day}
-                className={`flex justify-between gap-4 rounded-full px-3 py-0.5 ${today === i ? "bg-ivory/45 font-normal text-espresso" : "text-mocha"}`}
+                className={`flex justify-between gap-4 rounded-full px-3 py-0.5 ${today === i ? "bg-sand/70 font-normal text-espresso" : "text-mocha"}`}
               >
                 <span>{day}</span>
                 <span className="tabular-nums">{site.hours[i] ?? f.closed}</span>

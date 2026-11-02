@@ -48,8 +48,8 @@ export default function BeforeAfter({ dict }: { dict: Dictionary["results"] }) {
   const pair = results[index];
 
   return (
-    <section id="results" className="relative bg-sand px-5 py-14 sm:px-8 md:py-20">
-      <EdgeFade color="#171310" />
+    <section id="results" className="relative bg-sand px-5 py-28 sm:px-8 md:py-32">
+      <EdgeFade color="#171310" side="bottom" />
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
       <Reveal delay={0.1}>
         <p className="mx-auto mt-4 max-w-lg text-center leading-relaxed text-mocha">{dict.text}</p>

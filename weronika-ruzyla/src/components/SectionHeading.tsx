@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { PillLights } from "./FairyLights";
 
 type Props = {
   eyebrow: string;
@@ -20,10 +21,11 @@ const wordVariants = {
 export function Eyebrow({ children, tone = "dark" }: { children: React.ReactNode; tone?: "dark" | "light" }) {
   return (
     <span
-      className={`eyebrow inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[0.5rem] ${
+      className={`eyebrow relative inline-flex items-center justify-center rounded-full px-3 py-1.5 text-center text-[0.5rem] ${
         tone === "dark" ? "glass-card text-mocha" : "glass-dark text-sand"
       }`}
     >
+      <PillLights />
       {children}
     </span>
   );

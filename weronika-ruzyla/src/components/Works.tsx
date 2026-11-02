@@ -13,10 +13,11 @@ const rows: Key[][] = [
 /** Two rows of photos drifting in opposite directions, like the Framer draft; pure CSS so scrolling stays smooth. */
 export default function Works({ dict }: { dict: Dictionary["works"] }) {
   return (
-    <section id="works" className="relative overflow-hidden bg-sand py-14 md:py-20">
-      <EdgeFade color="#cab9a1" />
-      <SectionHeading eyebrow={dict.eyebrow} title={dict.title} className="px-5" />
-      <p className="mx-auto mt-4 max-w-lg px-5 text-center font-light leading-relaxed text-mocha">{dict.text}</p>
+    <section id="works" data-tone="dark" className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,#1f5244_0%,#143d30_60%,#0c271f_100%)] py-28 md:py-32">
+      <EdgeFade color="#1a4a3c" className="h-24 sm:h-28" />
+      <EdgeFade color="#e4d2b8" side="bottom" />
+      <SectionHeading eyebrow={dict.eyebrow} title={dict.title} tone="light" className="px-5" />
+      <p className="mx-auto mt-4 max-w-lg px-5 text-center font-light leading-relaxed text-ivory/80">{dict.text}</p>
 
       <div className="mt-8 flex flex-col gap-3 sm:gap-4">
         {rows.map((row, r) => (

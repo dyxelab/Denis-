@@ -10,8 +10,8 @@ import EdgeFade from "./EdgeFade";
 
 export default function About({ dict }: { dict: Dictionary["about"] }) {
   return (
-    <section id="about" className="blooms relative px-5 py-14 sm:px-8 md:py-20">
-      <EdgeFade color="#bdab8f" />
+    <section id="about" className="blooms relative px-5 pb-28 pt-14 sm:px-8 md:pb-32 md:pt-20">
+      <EdgeFade color="#7f1b2e" side="bottom" />
       <SectionHeading eyebrow={dict.eyebrow} title={dict.title} />
 
       <div className="relative mx-auto mt-8 flex max-w-2xl items-end justify-center gap-4 sm:gap-6">

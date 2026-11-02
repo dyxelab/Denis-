@@ -6,11 +6,12 @@ const pl: Dictionary = {
     description:
       "Gabinet kosmetologii estetycznej w Gdyni (ul. Władysława IV 1): indywidualnie dobrane zabiegi na twarz, fototerapia LED Dermalux Flex MD i mezoterapia bezigłowa. Umów wizytę przez Booksy.",
   },
-  intro: "Kosmetologia estetyczna",
+  intro: "Wesołych Świąt",
   menu: { open: "Menu", close: "Zamknij", language: "Język" },
   nav: {
     home: "Start",
     about: "O mnie",
+    gift: "Prezent na Święta",
     works: "Moje prace",
     treatments: "Zabiegi",
     results: "Efekty",
@@ -22,10 +23,10 @@ const pl: Dictionary = {
   bookingMessage: "Dzień dobry! Chciałabym umówić wizytę.",
   hero: {
     eyebrow: "Kosmetologia estetyczna",
-    titleA: "Twoje piękno",
-    titleB: "w pełnym blasku.",
+    titleA: "Święta",
+    titleB: "pełne blasku.",
     subtitle:
-      "Indywidualnie dobrane zabiegi, profesjonalna technologia i rytuały pielęgnacji — w spokojnej przestrzeni stworzonej z myślą o Tobie.",
+      "Podaruj sobie lub bliskim chwilę piękna – świąteczne vouchery i zabiegi, które rozświetlą skórę na każdą okazję.",
     cta: "Umów wizytę",
     secondary: "Poznaj zabiegi",
     scroll: "Przewiń",
@@ -40,6 +41,14 @@ const pl: Dictionary = {
       "Certyfikowane produkty profesjonalne",
       "Technologia klasy medycznej",
     ],
+  },
+  xmas: {
+    greeting: "Wesołych Świąt i szczęśliwego Nowego Roku",
+    eyebrow: "Prezent na Święta",
+    title: "Podaruj chwilę piękna",
+    text: "Elegancki voucher podarunkowy na dowolny zabieg, zapakowany w świątecznym stylu. Idealny prezent dla mamy, siostry, przyjaciółki… albo dla siebie.",
+    cta: "Zamów voucher",
+    message: "Dzień dobry! Chciałabym zamówić świąteczny voucher podarunkowy.",
   },
   works: {
     eyebrow: "Nasza codzienność",

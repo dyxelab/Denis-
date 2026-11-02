@@ -13,6 +13,8 @@ import Dermalux from "@/components/Dermalux";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingBook from "@/components/FloatingBook";
+import Snow from "@/components/Snow";
+import XmasGift from "@/components/XmasGift";
 import StructuredData from "@/components/StructuredData";
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
@@ -29,6 +31,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <Hero dict={dict} />
         <BrandMarquee label={dict.brands.eyebrow} />
         <About dict={dict.about} />
+        <XmasGift dict={dict.xmas} />
         <Works dict={dict.works} />
         <Treatments dict={dict} />
         <BeforeAfter dict={dict.results} />
@@ -37,6 +40,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </main>
       <Footer dict={dict} />
       <FloatingBook dict={dict} />
+      <Snow />
     </>
   );
 }

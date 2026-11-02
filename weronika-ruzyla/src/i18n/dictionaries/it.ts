@@ -6,11 +6,12 @@ const it: Dictionary = {
     description:
       "Studio di cosmetologia estetica a Gdynia, Polonia (Władysława IV 1): trattamenti viso personalizzati, fototerapia LED Dermalux Flex MD e mesoterapia senza aghi. Prenota su Booksy.",
   },
-  intro: "Cosmetologia estetica",
+  intro: "Buon Natale",
   menu: { open: "Menu", close: "Chiudi", language: "Lingua" },
   nav: {
     home: "Home",
     about: "Chi sono",
+    gift: "Regalo di Natale",
     works: "I miei lavori",
     treatments: "Trattamenti",
     results: "Prima e dopo",
@@ -22,10 +23,10 @@ const it: Dictionary = {
   bookingMessage: "Buongiorno! Vorrei prenotare un appuntamento.",
   hero: {
     eyebrow: "Cosmetologia estetica",
-    titleA: "La tua bellezza,",
-    titleB: "in piena luce.",
+    titleA: "Un Natale",
+    titleB: "pieno di luce.",
     subtitle:
-      "Trattamenti personalizzati, tecnologia professionale e rituali di cura — in uno spazio sereno pensato per te.",
+      "Regala a te o a chi ami un momento di bellezza: buoni regalo natalizi e trattamenti che illuminano la pelle per ogni festa.",
     cta: "Prenota ora",
     secondary: "Scopri i trattamenti",
     scroll: "Scorri",
@@ -40,6 +41,14 @@ const it: Dictionary = {
       "Prodotti professionali certificati",
       "Tecnologia di livello medicale",
     ],
+  },
+  xmas: {
+    greeting: "Buon Natale e felice anno nuovo",
+    eyebrow: "Regalo di Natale",
+    title: "Regala un momento di bellezza",
+    text: "Un elegante buono regalo per qualsiasi trattamento, confezionato in stile natalizio. Il regalo perfetto per mamma, sorella, amica… o per te.",
+    cta: "Ordina un buono",
+    message: "Buongiorno! Vorrei ordinare un buono regalo natalizio.",
   },
   works: {
     eyebrow: "La nostra realtà",
